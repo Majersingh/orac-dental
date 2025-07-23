@@ -41,7 +41,7 @@ const highlights = [
 
 export default function WhyUsSection() {
   return (
-    <section className="py-10  px-4 text-center border-2  md:p-24 bg-pink-100/95 m-4 rounded-4xl">
+    <section className="py-10  px-4 text-center border-2  md:p-24 bg-pink-100/95 m-4 rounded-4xl overflow-hidden">
       <h2 className="text-3xl sm:text-4xl font-extrabold mb-6 text-[#d72660] leading-tight">Why Trust <span className="text-[#1e293b]">Orac Dental</span></h2>
       <motion.div
         initial={{ opacity: 0, x: 40 }}
