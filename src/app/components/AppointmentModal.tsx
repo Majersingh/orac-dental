@@ -1,10 +1,18 @@
 "use client";
+
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface AppointmentModalProps {
   open: boolean;
   onClose: () => void;
+}
+
+// Helper to encode form data for x-www-form-urlencoded
+function encode(data: Record<string, string>) {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
 }
 
 export default function AppointmentModal({ open, onClose }: AppointmentModalProps) {
@@ -14,8 +22,27 @@ export default function AppointmentModal({ open, onClose }: AppointmentModalProp
   function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
-  // function handleSubmit(e: React.FormEvent) {
-  // }
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    try {
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({ "form-name": "appointment", ...form }),
+      });
+      setSubmitted(true);
+      setTimeout(() => {
+        setSubmitted(false);
+        setForm({ name: "", phone: "", email: "", message: "" });
+        onClose();
+      }, 2000);
+    } catch (error) {
+      alert("Something went wrong. Please try again.");
+      console.error(error);
+    }
+  }
+
   return (
     <AnimatePresence>
       {open && (
@@ -39,6 +66,7 @@ export default function AppointmentModal({ open, onClose }: AppointmentModalProp
             >
               ×
             </button>
+
             {submitted ? (
               <div className="text-center py-10">
                 <div className="text-3xl mb-4">🎉</div>
@@ -46,65 +74,69 @@ export default function AppointmentModal({ open, onClose }: AppointmentModalProp
                 <div className="text-gray-700">Your appointment request has been received.</div>
               </div>
             ) : (
-            <form
-              name="appointment"
-              method="POST"
-              data-netlify="true"
-              netlify-honeypot="bot-field"
-              // onSubmit={handleSubmit}
-              className="flex flex-col gap-4"
-              action="/thank-you"
-            >
-              <input type="hidden" name="form-name" value="appointment" />
-              <input type="hidden" name="bot-field" />
-            
-              <h3 className="text-2xl font-bold mb-2 text-[#d72660] text-center">Book Appointment</h3>
-              <input
-                type="text"
-                name="name"
-                placeholder="Name"
-                value={form.name}
-                onChange={handleChange}
-                required
-                className="border border-pink-200 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#d72660]"
-              />
-              <input
-                type="tel"
-                name="phone"
-                placeholder="Phone"
-                value={form.phone}
-                onChange={handleChange}
-                required
-                className="border border-pink-200 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#d72660]"
-              />
-              <input
-                type="email"
-                name="email"
-                placeholder="Email"
-                value={form.email}
-                onChange={handleChange}
-                required
-                className="border border-pink-200 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#d72660]"
-              />
-              <textarea
-                name="message"
-                placeholder="Message (optional)"
-                value={form.message}
-                onChange={handleChange}
-                rows={3}
-                className="border border-pink-200 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#d72660]"
-              />
-              <button
-                type="submit"
-                className="mt-2 px-8 py-3 bg-[#d72660] text-white text-lg font-bold rounded-xl shadow hover:bg-pink-600 transition-all"
+              <form
+                name="appointment"
+                method="POST"
+                data-netlify="true"
+                netlify-honeypot="bot-field"
+                onSubmit={handleSubmit}
+                className="flex flex-col gap-4"
               >
-                Submit
-              </button>
-            </form>            
+                <input type="hidden" name="form-name" value="appointment" />
+                <input type="hidden" name="bot-field" />
+
+                <h3 className="text-2xl font-bold mb-2 text-[#d72660] text-center">Book Appointment</h3>
+
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Name"
+                  value={form.name}
+                  onChange={handleChange}
+                  required
+                  className="border border-pink-200 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#d72660]"
+                />
+
+                <input
+                  type="tel"
+                  name="phone"
+                  placeholder="Phone"
+                  value={form.phone}
+                  onChange={handleChange}
+                  required
+                  className="border border-pink-200 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#d72660]"
+                />
+
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  value={form.email}
+                  onChange={handleChange}
+                  required
+                  className="border border-pink-200 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#d72660]"
+                />
+
+                <textarea
+                  name="message"
+                  placeholder="Message (optional)"
+                  value={form.message}
+                  onChange={handleChange}
+                  rows={3}
+                  className="border border-pink-200 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#d72660]"
+                />
+
+                <button
+                  type="submit"
+                  className="mt-2 px-8 py-3 bg-[#d72660] text-white text-lg font-bold rounded-xl shadow hover:bg-pink-600 transition-all"
+                >
+                  Submit
+                </button>
+              </form>
             )}
           </motion.div>
         </motion.div>
       )}
     </AnimatePresence>
   );
-} 
+}

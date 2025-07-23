@@ -1,16 +1,42 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
+// Helper to encode form data
+function encode(data: Record<string, string>) {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
+}
+
 export default function ContactForm() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  // const handleSubmit = (e: React.FormEvent) => {
-  // };
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    try {
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({ "form-name": "contact", ...form }),
+      });
+      setSubmitted(true);
+      setForm({ name: "", email: "", message: "" });
+
+      setTimeout(() => {
+        setSubmitted(false);
+      }, 5000); // Reset after 5 seconds
+    } catch (err) {
+      alert("Something went wrong. Please try again.");
+      console.error(err);
+    }
+  };
 
   return (
     <section className="py-20 bg-pink-50 px-4 flex justify-center items-center">
@@ -36,14 +62,11 @@ export default function ContactForm() {
             method="POST"
             data-netlify="true"
             netlify-honeypot="bot-field"
-            // onSubmit={handleSubmit}
+            onSubmit={handleSubmit}
             className="space-y-5"
-            action="/thank-you"
           >
-            {/* Required hidden inputs */}
             <input type="hidden" name="form-name" value="contact" />
             <input type="hidden" name="bot-field" />
-            
             <div>
               <label className="block text-gray-700 font-semibold mb-1">Name</label>
               <input
