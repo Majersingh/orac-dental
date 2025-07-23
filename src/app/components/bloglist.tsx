@@ -22,7 +22,7 @@ export default function BlogList() {
   }, []);
 
   return (
-    <section id='blogs' className="p-4 max-w-7xl mx-auto">
+    <section id='blogs' className="p-4 max-w-7xl mx-auto overflow-hidden">
       <h2 className="text-3xl font-bold mb-6 text-center">Blogs</h2>
 
       {loading ? (
