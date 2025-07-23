@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, scale } from "framer-motion";
 
 const services = [
   {
@@ -37,7 +37,7 @@ const services = [
 
 export default function ServicesSection() {
   return (
-    <section className="py-20 bg-pink-50 px-4">
+    <section id="services" className="py-10 bg-pink-50 px-4">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -50,6 +50,7 @@ export default function ServicesSection() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {services.map((service, i) => (
             <motion.div
+              whileHover={{ scale: 1.1 }}
               key={service.name}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}

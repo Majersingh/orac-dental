@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export default function AboutSection() {
   return (
-    <section className="py-20 bg-white px-4 flex flex-col md:flex-row items-center justify-center gap-12">
+    <section id='about' className="bg-white px-4 space-x-2 flex flex-col md:flex-row items-center justify-center overflow-hidden">
       {/* Left Image for desktop, top for mobile */}
       <motion.div
         initial={{ opacity: 0, x: -40 }}
@@ -14,7 +14,7 @@ export default function AboutSection() {
         <img
           src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80"
           alt="Dental clinic team"
-          className="rounded-2xl shadow-lg w-full max-w-md object-cover"
+          className="rounded-2xl shadow-lg w-full max-w-md object-fill"
         />
       </motion.div>
       {/* Right Content */}

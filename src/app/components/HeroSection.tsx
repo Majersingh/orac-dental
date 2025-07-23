@@ -1,6 +1,7 @@
 "use client";
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { motion } from 'framer-motion';
 
 interface HeroSectionProps {
   onBook: () => void;
@@ -50,12 +51,15 @@ export default function HeroSection({ onBook }: HeroSectionProps) {
         <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold uppercase text-white drop-shadow-lg mb-6">
           LOOKING FOR QUALITY DENTAL TREATMENT AT AN AFFORDABLE PRICE???<br />HERE YOU GO
         </h1>
-        <button
+        <motion.button
           onClick={onBook}
-          className="mt-4 px-8 py-4  text-white text-lg font-bold rounded-xl shadow-lg hover:bg-slate-400/25 transition-all border-4 border-pink-500"
+          whileTap={{ scale: 0.95 }}
+          whileHover={{ scale: 1.05 }}
+          transition={{ type: 'spring', stiffness: 300 }}
+          className="px-6 py-3 mt-8 rounded-lg bg-pink-600 text-white font-semibold shadow-md hover:bg-pink-700"
         >
           Book Appointment Now
-        </button>
+        </motion.button>
       </div>
     </section>
   );

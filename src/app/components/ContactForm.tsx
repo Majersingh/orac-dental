@@ -39,7 +39,7 @@ export default function ContactForm() {
   };
 
   return (
-    <section className="py-20 bg-pink-50 px-4 flex justify-center items-center">
+    <section id="contact" className="py-20 bg-pink-50 px-4 flex justify-center items-center">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}

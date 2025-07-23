@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export default function TeamSection() {
   return (
-    <section className="py-20 bg-pink-50 px-4">
+    <section className="py-10 bg-pink-50 px-4">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}

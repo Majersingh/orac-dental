@@ -17,6 +17,7 @@ function encode(data: Record<string, string>) {
 
 export default function AppointmentModal({ open, onClose }: AppointmentModalProps) {
   const [submitted, setSubmitted] = useState(false);
+  const [sending , setSending]=useState(false)
   const [form, setForm] = useState({ name: "", phone: "", email: "", message: "" });
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
@@ -24,6 +25,7 @@ export default function AppointmentModal({ open, onClose }: AppointmentModalProp
   }
 
   async function handleSubmit(e: React.FormEvent) {
+    setSending(true)
     e.preventDefault();
     // Use the form state instead of FormData to avoid type errors and match x-www-form-urlencoded
     fetch("forms.html", {
@@ -38,7 +40,10 @@ export default function AppointmentModal({ open, onClose }: AppointmentModalProp
       }
       console.log("Form successfully submitted");
       setSubmitted(true);
-      setSubmitted(false);
+      setTimeout(()=>{
+        setSubmitted(false);
+      },2000)
+      setSending(false)
       setForm({ name: "", phone: "", email: "", message: "" });
       onClose();
     })
@@ -133,9 +138,10 @@ export default function AppointmentModal({ open, onClose }: AppointmentModalProp
 
                 <button
                   type="submit"
+                  disabled={sending}
                   className="mt-2 px-8 py-3 bg-[#d72660] text-white text-lg font-bold rounded-xl shadow hover:bg-pink-600 transition-all"
                 >
-                  Submit
+                  {sending?'Submitting...':"Submit"}
                 </button>
               </form>
             )}

@@ -41,7 +41,7 @@ const highlights = [
 
 export default function WhyUsSection() {
   return (
-    <section className="py-10  px-4 text-center border-2  md:p-24 bg-pink-100 m-4 rounded-4xl">
+    <section className="py-10  px-4 text-center border-2  md:p-24 bg-pink-100/95 m-4 rounded-4xl">
       <h2 className="text-3xl sm:text-4xl font-extrabold mb-6 text-[#d72660] leading-tight">Why Trust <span className="text-[#1e293b]">Orac Dental</span></h2>
       <motion.div
         initial={{ opacity: 0, x: 40 }}
@@ -52,7 +52,7 @@ export default function WhyUsSection() {
       >
         <div className="space-y-6 space-x-2 grid grid-cols-1 md:grid-cols-2 gap-6 items-center justify-items-center">
           {highlights.map((group, idx) => (
-            <div key={group.title} className="bg-pink-50 rounded-xl p-5 border-l-4 border-[#d72660] shadow md:w-1/2 w-full">
+            <div key={group.title} className="bg-pink-50 rounded-xl p-5 border-l-4 border-pink-200 shadow md:w-1/2 w-full">
               <div className="font-bold text-[#d72660] mb-2 text-lg flex items-center gap-2">
                 <span className="inline-block w-2 h-2 bg-[#d72660] rounded-full"></span>
                 {group.title}

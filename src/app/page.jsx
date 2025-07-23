@@ -12,6 +12,7 @@ import FinalImageSection from "./components/FinalImageSection";
 import AppointmentModal from "./components/AppointmentModal";
 import ContactForm from "./components/ContactForm";
 import Footer from "./components/Footer";
+import BlogList from './components/bloglist'
 import { useState } from "react";
 
 export default function Home() {
@@ -21,6 +22,7 @@ export default function Home() {
       <HeroSection onBook={() => setModalOpen(true)} />
       <ServicesSection />
       <WhyUsSection />
+      <BlogList/>
       <SpecialOfferSection onBook={() => setModalOpen(true)} />
       <TeamSection />
       <TestimonialsSection />
