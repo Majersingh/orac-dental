@@ -14,15 +14,8 @@ export default function AppointmentModal({ open, onClose }: AppointmentModalProp
   function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
-  function handleSubmit(e: React.FormEvent) {
-    // e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      setForm({ name: "", phone: "", email: "", message: "" });
-      onClose();
-    }, 2000);
-  }
+  // function handleSubmit(e: React.FormEvent) {
+  // }
   return (
     <AnimatePresence>
       {open && (
@@ -58,8 +51,9 @@ export default function AppointmentModal({ open, onClose }: AppointmentModalProp
               method="POST"
               data-netlify="true"
               netlify-honeypot="bot-field"
-              onSubmit={handleSubmit}
+              // onSubmit={handleSubmit}
               className="flex flex-col gap-4"
+              action="/thank-you"
             >
               <input type="hidden" name="form-name" value="appointment" />
               <input type="hidden" name="bot-field" />

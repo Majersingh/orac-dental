@@ -9,11 +9,8 @@ export default function ContactForm() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    // e.preventDefault();
-    setSubmitted(true);
-    // Netlify will automatically handle the submission
-  };
+  // const handleSubmit = (e: React.FormEvent) => {
+  // };
 
   return (
     <section className="py-20 bg-pink-50 px-4 flex justify-center items-center">
@@ -39,8 +36,9 @@ export default function ContactForm() {
             method="POST"
             data-netlify="true"
             netlify-honeypot="bot-field"
-            onSubmit={handleSubmit}
+            // onSubmit={handleSubmit}
             className="space-y-5"
+            action="/thank-you"
           >
             {/* Required hidden inputs */}
             <input type="hidden" name="form-name" value="contact" />
