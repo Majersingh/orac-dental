@@ -15,7 +15,7 @@ export default function AppointmentModal({ open, onClose }: AppointmentModalProp
     setForm({ ...form, [e.target.name]: e.target.value });
   }
   function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
+    // e.preventDefault();
     setSubmitted(true);
     setTimeout(() => {
       setSubmitted(false);
@@ -53,7 +53,7 @@ export default function AppointmentModal({ open, onClose }: AppointmentModalProp
                 <div className="text-gray-700">Your appointment request has been received.</div>
               </div>
             ) : (
-              <form
+            <form
               name="appointment"
               method="POST"
               data-netlify="true"

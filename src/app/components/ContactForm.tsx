@@ -10,7 +10,7 @@ export default function ContactForm() {
   };
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+    // e.preventDefault();
     setSubmitted(true);
     // Netlify will automatically handle the submission
   };
