@@ -25,22 +25,23 @@ export default function AppointmentModal({ open, onClose }: AppointmentModalProp
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    try {
-      await fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode({ "form-name": "appointment", ...form }),
-      });
-      setSubmitted(true);
-      setTimeout(() => {
-        setSubmitted(false);
-        setForm({ name: "", phone: "", email: "", message: "" });
-        onClose();
-      }, 2000);
-    } catch (error) {
-      alert("Something went wrong. Please try again.");
-      console.error(error);
-    }
+    // Use the form state instead of FormData to avoid type errors and match x-www-form-urlencoded
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "appointment", ...form }),
+    })
+    .then((response: Response) => {
+      if (!response.ok) {
+        // You might want to handle non-2xx responses as errors
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      console.log("Form successfully submitted");
+    })
+    .catch((error: Error) => {
+      // Type 'error' as Error for better type safety
+      alert(error.message); // Access the message property of the Error object
+    });
   }
 
   return (
