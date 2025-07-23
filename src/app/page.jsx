@@ -19,7 +19,6 @@ export default function Home() {
   return (
     <div className="bg-white text-[#d72660] font-sans">
       <HeroSection onBook={() => setModalOpen(true)} />
-      <AboutSection />
       <ServicesSection />
       <WhyUsSection />
       <SpecialOfferSection onBook={() => setModalOpen(true)} />
@@ -27,6 +26,7 @@ export default function Home() {
       <TestimonialsSection />
       <FinalImageSection />
       <ContactForm />
+      <AboutSection />
       <Footer />
       <TimedPopup onBook={() => setModalOpen(true)} />
       <AppointmentModal open={modalOpen} onClose={() => setModalOpen(false)} />

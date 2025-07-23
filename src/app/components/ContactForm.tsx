@@ -12,7 +12,7 @@ export default function ContactForm() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitted(true);
-    // Here you would typically send the form data to your backend or email service
+    // Netlify will automatically handle the submission
   };
 
   return (
@@ -26,11 +26,26 @@ export default function ContactForm() {
       >
         <h2 className="text-3xl font-bold mb-6 text-[#d72660] text-center">Contact Us</h2>
         {submitted ? (
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-green-600 text-center font-semibold">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="text-green-600 text-center font-semibold"
+          >
             Thank you for reaching out! We will get back to you soon.
           </motion.div>
         ) : (
-          <form onSubmit={handleSubmit} className="space-y-5">
+          <form
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            onSubmit={handleSubmit}
+            className="space-y-5"
+          >
+            {/* Required hidden inputs */}
+            <input type="hidden" name="form-name" value="contact" />
+            <input type="hidden" name="bot-field" />
+            
             <div>
               <label className="block text-gray-700 font-semibold mb-1">Name</label>
               <input
@@ -77,4 +92,4 @@ export default function ContactForm() {
       </motion.div>
     </section>
   );
-} 
+}

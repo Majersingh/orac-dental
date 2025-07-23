@@ -22,7 +22,7 @@ export default function TimedPopup({ onBook }: TimedPopupProps) {
           transition={{ duration: 0.5 }}
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/40"
         >
-          <div className="bg-white rounded-2xl shadow-xl p-8 max-w-md w-full text-center border-4 border-pink-200 relative">
+          <div className="bg-white rounded-2xl shadow-xl p-8 m-4 max-w-md w-full text-center border-4 border-pink-200 relative">
             <button
               className="absolute top-2 right-2 text-[#d72660] text-2xl font-bold hover:text-pink-400"
               onClick={() => setShow(false)}
