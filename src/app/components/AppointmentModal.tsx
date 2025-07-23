@@ -37,6 +37,10 @@ export default function AppointmentModal({ open, onClose }: AppointmentModalProp
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       console.log("Form successfully submitted");
+      setSubmitted(true);
+      setSubmitted(false);
+      setForm({ name: "", phone: "", email: "", message: "" });
+      onClose();
     })
     .catch((error: Error) => {
       // Type 'error' as Error for better type safety
