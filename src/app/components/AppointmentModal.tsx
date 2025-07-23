@@ -26,7 +26,7 @@ export default function AppointmentModal({ open, onClose }: AppointmentModalProp
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     // Use the form state instead of FormData to avoid type errors and match x-www-form-urlencoded
-    fetch("/", {
+    fetch("forms.html", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({ "form-name": "appointment", ...form }),
