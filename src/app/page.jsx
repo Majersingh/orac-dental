@@ -13,6 +13,7 @@ import AppointmentModal from "./components/AppointmentModal";
 import ContactForm from "./components/ContactForm";
 import Footer from "./components/Footer";
 import BlogList from './components/bloglist'
+import CTA from './components/cta'
 import { useState } from "react";
 
 export default function Home() {
@@ -29,6 +30,7 @@ export default function Home() {
       <FinalImageSection />
       <ContactForm />
       <AboutSection />
+      <CTA/>
       <Footer />
       <TimedPopup onBook={() => setModalOpen(true)} />
       <AppointmentModal open={modalOpen} onClose={() => setModalOpen(false)} />

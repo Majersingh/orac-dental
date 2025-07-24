@@ -24,6 +24,10 @@ export default function Footer() {
         </nav>
         <div className="text-xs mt-4 md:mt-0">&copy; {new Date().getFullYear()} ORAC Dental Clinic. All rights reserved.</div>
       </motion.div>
+      <div className="flex justify-center items-center space-x-2 text-xs font-thin opacity-75">
+        <p className="">Developed By</p> 
+        <a className="underline" href='https://www.linkedin.com/in/yadav-majersingh-ramsingh-0858aa211/'>Majersingh</a>
+      </div>
     </footer>
   );
 } 
