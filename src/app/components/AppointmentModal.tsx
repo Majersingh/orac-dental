@@ -42,13 +42,15 @@ export default function AppointmentModal({ open, onClose }: AppointmentModalProp
       setSubmitted(true);
       setTimeout(()=>{
         setSubmitted(false);
-      },2000)
+        onClose();
+      },3000)
       setSending(false)
       setForm({ name: "", phone: "", email: "", message: "" });
-      onClose();
     })
     .catch((error: Error) => {
       // Type 'error' as Error for better type safety
+      setSubmitted(false);
+      onClose();
       alert(error.message); // Access the message property of the Error object
     });
   }
