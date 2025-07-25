@@ -5,10 +5,10 @@ import AboutSection from "./components/AboutSection";
 import ServicesSection from "./components/ServicesSection";
 import TimedPopup from "./components/TimedPopup";
 import WhyUsSection from "./components/WhyUsSection";
-import SpecialOfferSection from "./components/SpecialOfferSection";
+// import SpecialOfferSection from "./components/SpecialOfferSection";
 import TeamSection from "./components/TeamSection";
 import TestimonialsSection from "./components/TestimonialsSection";
-import FinalImageSection from "./components/FinalImageSection";
+// import FinalImageSection from "./components/FinalImageSection";
 import AppointmentModal from "./components/AppointmentModal";
 import ContactForm from "./components/ContactForm";
 import Footer from "./components/Footer";
@@ -21,15 +21,13 @@ export default function Home() {
   return (
     <div className="bg-white text-[#d72660] font-sans">
       <HeroSection onBook={() => setModalOpen(true)} />
-      <ServicesSection />
+      <ServicesSection  onBook={() => setModalOpen(true)}/>
       <WhyUsSection />
       <BlogList/>
-      <SpecialOfferSection onBook={() => setModalOpen(true)} />
       <TeamSection />
       <TestimonialsSection />
-      <FinalImageSection />
       <ContactForm />
-      <AboutSection />
+      <AboutSection onBook={() => setModalOpen(true)}/>
       <CTA/>
       <Footer />
       <TimedPopup onBook={() => setModalOpen(true)} />

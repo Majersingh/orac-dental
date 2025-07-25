@@ -1,67 +1,270 @@
-import { motion, scale } from "framer-motion";
-
+import { motion } from "framer-motion";
+interface ServicesSection  {
+  onBook: () => void;
+}
 const services = [
   {
     name: "Regular Check-up",
     image: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80",
+    icon: "🦷",
+    description: "Comprehensive oral health examination"
   },
   {
     name: "Dental Implants",
     image: "https://images.unsplash.com/photo-1506459225024-1428097a7e18?auto=format&fit=crop&w=400&q=80",
+    icon: "🦾",
+    description: "Permanent tooth replacement solutions"
   },
   {
     name: "Kids Dentistry",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
+    icon: "👶",
+    description: "Gentle care for little smiles"
   },
   {
     name: "Braces & Aligners",
     image: "https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?auto=format&fit=crop&w=400&q=80",
+    icon: "🦷",
+    description: "Straighten teeth with modern technology"
   },
   {
     name: "Follow Appointment",
     image: "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80",
+    icon: "📅",
+    description: "Scheduled follow-up care"
   },
   {
     name: "Tooth Pain",
     image: "https://images.unsplash.com/photo-1511407397940-d57f68e81203?auto=format&fit=crop&w=400&q=80",
+    icon: "⚡",
+    description: "Emergency pain relief treatment"
   },
   {
     name: "Tooth Cleaning",
     image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80",
+    icon: "✨",
+    description: "Professional deep cleaning service"
   },
   {
     name: "Emergency Care",
     image: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80",
+    icon: "🚨",
+    description: "24/7 urgent dental care"
   },
 ];
 
-export default function ServicesSection() {
+// Floating particles component
+const ServicesParticles = () => {
   return (
-    <section id="services" className="py-10 bg-pink-50 px-4">
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      {[...Array(20)].map((_, i) => (
+        <motion.div
+          key={`service-particle-${i}`}
+          className="absolute w-1 h-1 bg-cyan-400 rounded-full opacity-30"
+          initial={{
+            x: Math.random() * 100 + "%",
+            y: Math.random() * 100 + "%",
+          }}
+          animate={{
+            x: Math.random() * 100 + "%",
+            y: Math.random() * 100 + "%",
+            scale: [0.5, 1.5, 0.5],
+            opacity: [0.2, 0.6, 0.2],
+          }}
+          transition={{
+            duration: Math.random() * 15 + 20,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+        />
+      ))}
+    </div>
+  );
+};
+
+export default function ServicesSection({ onBook }:ServicesSection) {
+  return (
+    <section 
+      id="services" 
+      className="relative py-20 px-4 overflow-hidden"
+      style={{
+        background: `linear-gradient(135deg, 
+          rgba(15, 23, 42, 1) 0%, 
+          rgba(88, 28, 135, 0.8) 30%,
+          rgba(15, 23, 42, 1) 70%,
+          rgba(30, 41, 59, 1) 100%
+        )`
+      }}
+    >
+      {/* Background Effects */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900/50 via-purple-900/30 to-slate-900/50" />
+      
+      {/* Floating Particles */}
+      <ServicesParticles />
+      
+      {/* Animated Background Grid */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `
+            linear-gradient(rgba(6, 182, 212, 0.1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(6, 182, 212, 0.1) 1px, transparent 1px)
+          `,
+          backgroundSize: '50px 50px'
+        }} />
+      </div>
+
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="max-w-5xl mx-auto"
+        className="relative z-10 max-w-7xl mx-auto"
       >
-        <h2 className="text-3xl sm:text-4xl font-bold mb-2 text-[#d72660] text-center">How can we help you today?</h2>
-        <p className="text-lg text-gray-700 mb-10 text-center">Select one option that best describes your need, then click ‘Continue’</p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        {/* Header Section */}
+        <div className="text-center mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="inline-block mb-4"
+          >
+            <span className="px-4 py-2 bg-gradient-to-r from-cyan-500/20 via-purple-500/20 to-pink-500/20 rounded-full text-cyan-400 text-sm font-semibold border border-cyan-500/30 backdrop-blur-sm">
+              Our Services
+            </span>
+          </motion.div>
+          
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-4xl sm:text-5xl lg:text-6xl font-black text-transparent bg-gradient-to-r from-cyan-400 via-pink-400 to-purple-400 bg-clip-text mb-6"
+          >
+            How can we help you today?
+          </motion.h2>
+          
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
+          >
+            Select the service that best describes your need and experience the{" "}
+            <span className="text-transparent bg-gradient-to-r from-cyan-400 to-pink-400 bg-clip-text font-semibold">
+              future of dental care
+            </span>
+          </motion.p>
+        </div>
+
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8">
           {services.map((service, i) => (
             <motion.div
-              whileHover={{ scale: 1.1 }}
               key={service.name}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 50, scale: 0.9 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="relative rounded-xl shadow-lg h-44 flex items-end overflow-hidden group cursor-pointer border-2 border-pink-200"
-              style={{ backgroundImage: `url(${service.image})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+              transition={{ 
+                duration: 0.6, 
+                delay: i * 0.1,
+                type: "spring",
+                stiffness: 100
+              }}
+              whileHover={{ 
+                scale: 1.05,
+                y: -10,
+                transition: { duration: 0.3 }
+              }}
+              whileTap={{ scale: 0.95 }}
+              className="group relative cursor-pointer"
             >
-              <div className="absolute inset-0 bg-black/40 group-hover:bg-[#d72660]/60 transition-all duration-300" />
-              <div className="relative z-10 w-full text-center p-4">
-                <span className="text-white text-xl font-bold drop-shadow-lg">{service.name}</span>
+              {/* Card Container */}
+              <div className="relative h-64 sm:h-72 rounded-2xl overflow-hidden">
+                {/* Background Image */}
+                <div 
+                  className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                  style={{ backgroundImage: `url(${service.image})` }}
+                />
+                
+                {/* Gradient Overlays */}
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/50 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-purple-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                
+                {/* Animated Border */}
+                <div className="absolute inset-0 rounded-2xl border-2 border-cyan-500/30 group-hover:border-pink-400/50 transition-colors duration-300" />
+                
+                {/* Glow Effect */}
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-500/10 via-purple-500/10 to-pink-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm" />
+                
+                {/* Content */}
+                <div className="relative z-10 h-full flex flex-col justify-between p-6">
+                  {/* Icon */}
+                  <motion.div
+                    className="self-start"
+                    whileHover={{ rotate: 360, scale: 1.2 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <div className="w-12 h-12 bg-gradient-to-r from-cyan-500/20 to-pink-500/20 rounded-xl backdrop-blur-sm border border-cyan-500/30 flex items-center justify-center text-2xl group-hover:bg-gradient-to-r group-hover:from-cyan-500/30 group-hover:to-pink-500/30 transition-all duration-300">
+                      {service.icon}
+                    </div>
+                  </motion.div>
+                  
+                  {/* Text Content */}
+                  <div className="space-y-2">
+                    <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-cyan-400 group-hover:to-pink-400 group-hover:bg-clip-text transition-all duration-300">
+                      {service.name}
+                    </h3>
+                    
+                    <p className="text-gray-300 text-sm sm:text-base opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                      {service.description}
+                    </p>
+                    
+                    {/* CTA Arrow */}
+                    <motion.div
+                      className="flex items-center gap-2 text-cyan-400 opacity-0 group-hover:opacity-100 transition-all duration-300"
+                      initial={{ x: -10 }}
+                      whileHover={{ x: 0 }}
+                    >
+                      <button onClick={onBook} className="text-sm font-semibold">Check Now</button>
+                      <motion.svg
+                        className="w-4 h-4"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        whileHover={{ x: 5 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </motion.svg>
+                    </motion.div>
+                  </div>
+                </div>
+                
+                {/* Hover Particles */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                  {[...Array(5)].map((_, idx) => (
+                    <motion.div
+                      key={idx}
+                      className="absolute w-2 h-2 bg-cyan-400 rounded-full"
+                      style={{
+                        left: `${20 + idx * 20}%`,
+                        top: `${30 + idx * 10}%`,
+                      }}
+                      animate={{
+                        y: [-10, -30, -10],
+                        opacity: [0, 1, 0],
+                        scale: [0, 1, 0],
+                      }}
+                      transition={{
+                        duration: 2,
+                        repeat: Infinity,
+                        delay: idx * 0.2,
+                      }}
+                    />
+                  ))}
+                </div>
               </div>
             </motion.div>
           ))}
@@ -69,4 +272,4 @@ export default function ServicesSection() {
       </motion.div>
     </section>
   );
-} 
+}

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { FiUser, FiMail, FiMessageSquare, FiSend, FiCheck } from "react-icons/fi";
 
 // Helper to encode form data
 function encode(data: Record<string, string>) {
@@ -8,9 +9,39 @@ function encode(data: Record<string, string>) {
     .join("&");
 }
 
+// Floating particles component
+const ContactParticles = () => {
+  return (
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      {[...Array(15)].map((_, i) => (
+        <motion.div
+          key={`contact-particle-${i}`}
+          className="absolute w-1 h-1 bg-cyan-400 rounded-full opacity-30"
+          initial={{
+            x: Math.random() * 100 + "%",
+            y: Math.random() * 100 + "%",
+          }}
+          animate={{
+            x: Math.random() * 100 + "%",
+            y: Math.random() * 100 + "%",
+            scale: [0.5, 1.2, 0.5],
+            opacity: [0.2, 0.6, 0.2],
+          }}
+          transition={{
+            duration: Math.random() * 12 + 15,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+        />
+      ))}
+    </div>
+  );
+};
+
 export default function ContactForm() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -20,6 +51,8 @@ export default function ContactForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setSending(true);
+    
     try {
       await fetch("forms.html", {
         method: "POST",
@@ -28,89 +61,371 @@ export default function ContactForm() {
       });
       setSubmitted(true);
       setForm({ name: "", email: "", message: "" });
+      setSending(false);
 
       setTimeout(() => {
         setSubmitted(false);
-      }, 5000); // Reset after 5 seconds
+      }, 5000);
     } catch (err) {
+      setSending(false);
       alert("Something went wrong. Please try again.");
       console.error(err);
     }
   };
 
   return (
-    <section id="contact" className="py-20 bg-pink-50 px-4 flex justify-center items-center">
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-        className="max-w-lg w-full bg-white rounded-2xl shadow-lg p-10 border-2 border-pink-200"
-      >
-        <h2 className="text-3xl font-bold mb-6 text-[#d72660] text-center">Contact Us</h2>
-        {submitted ? (
+    <section 
+      id="contact" 
+      className="relative py-20 px-4 flex justify-center items-center overflow-hidden"
+      style={{
+        background: `linear-gradient(135deg, 
+          rgba(15, 23, 42, 1) 0%, 
+          rgba(88, 28, 135, 0.8) 30%,
+          rgba(15, 23, 42, 1) 70%,
+          rgba(30, 41, 59, 1) 100%
+        )`
+      }}
+    >
+      {/* Background Effects */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900/50 via-purple-900/30 to-slate-900/50" />
+      
+      {/* Floating Particles */}
+      <ContactParticles />
+      
+      {/* Animated Background Pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div 
+          className="absolute inset-0" 
+          style={{
+            backgroundImage: `
+              linear-gradient(45deg, rgba(6, 182, 212, 0.1) 1px, transparent 1px),
+              linear-gradient(-45deg, rgba(168, 85, 247, 0.1) 1px, transparent 1px)
+            `,
+            backgroundSize: '40px 40px'
+          }} 
+        />
+      </div>
+
+      {/* Animated Border */}
+      <div className="absolute inset-0">
+        <motion.div
+          className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-500 to-transparent"
+          animate={{
+            x: ['-100%', '100%'],
+          }}
+          transition={{
+            duration: 3,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+        />
+      </div>
+
+      <div className="relative z-10 w-full max-w-2xl">
+        {/* Header Section */}
+        <div className="text-center mb-12">
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="text-green-600 text-center font-semibold"
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="inline-block mb-6"
           >
-            Thank you for reaching out! We will get back to you soon.
+            <span className="px-6 py-3 bg-gradient-to-r from-cyan-500/20 via-purple-500/20 to-pink-500/20 rounded-full text-cyan-400 text-sm font-semibold border border-cyan-500/30 backdrop-blur-sm">
+              Get In Touch
+            </span>
           </motion.div>
-        ) : (
-          <form
-            name="contact"
-            method="POST"
-            data-netlify="true"
-            netlify-honeypot="bot-field"
-            onSubmit={handleSubmit}
-            className="space-y-5"
+          
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-4xl sm:text-5xl lg:text-6xl font-black text-transparent bg-gradient-to-r from-cyan-400 via-pink-400 to-purple-400 bg-clip-text mb-6"
           >
-            <input type="hidden" name="form-name" value="contact" />
-            <input type="hidden" name="bot-field" />
-            <div>
-              <label className="block text-gray-700 font-semibold mb-1">Name</label>
-              <input
-                type="text"
-                name="name"
-                value={form.name}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-200"
-              />
-            </div>
-            <div>
-              <label className="block text-gray-700 font-semibold mb-1">Email</label>
-              <input
-                type="email"
-                name="email"
-                value={form.email}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-200"
-              />
-            </div>
-            <div>
-              <label className="block text-gray-700 font-semibold mb-1">Message</label>
-              <textarea
-                name="message"
-                value={form.message}
-                onChange={handleChange}
-                required
-                rows={4}
-                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-200"
-              />
-            </div>
-            <motion.button
-              whileTap={{ scale: 0.95 }}
-              whileHover={{ scale: 1.03 }}
-              type="submit"
-              className="w-full py-3 bg-[#d72660] text-white font-bold rounded-lg shadow hover:bg-pink-600 transition-all"
+            Contact Us
+          </motion.h2>
+          
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed"
+          >
+            Ready to transform your smile? Get in touch with our{" "}
+            <span className="text-transparent bg-gradient-to-r from-cyan-400 to-pink-400 bg-clip-text font-semibold">
+              expert team
+            </span>{" "}
+            today
+          </motion.p>
+        </div>
+
+        {/* Contact Form */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="relative rounded-2xl overflow-hidden backdrop-blur-xl border border-cyan-500/30"
+          style={{
+            background: `linear-gradient(135deg, 
+              rgba(15, 23, 42, 0.9) 0%, 
+              rgba(88, 28, 135, 0.6) 50%,
+              rgba(15, 23, 42, 0.9) 100%
+            )`
+          }}
+        >
+          {/* Animated Border */}
+          <div className="absolute inset-0 rounded-2xl">
+            <motion.div
+              className="absolute inset-0 rounded-2xl border-2 border-transparent"
+              style={{
+                background: `linear-gradient(45deg, 
+                  transparent, 
+                  rgba(6, 182, 212, 0.3), 
+                  rgba(168, 85, 247, 0.3), 
+                  rgba(236, 72, 153, 0.3),
+                  transparent
+                ) border-box`,
+                mask: 'linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0)',
+                maskComposite: 'xor'
+              }}
+              animate={{
+                background: [
+                  'linear-gradient(0deg, transparent, rgba(6, 182, 212, 0.3), rgba(168, 85, 247, 0.3), rgba(236, 72, 153, 0.3), transparent)',
+                  'linear-gradient(90deg, transparent, rgba(6, 182, 212, 0.3), rgba(168, 85, 247, 0.3), rgba(236, 72, 153, 0.3), transparent)',
+                  'linear-gradient(180deg, transparent, rgba(6, 182, 212, 0.3), rgba(168, 85, 247, 0.3), rgba(236, 72, 153, 0.3), transparent)',
+                  'linear-gradient(270deg, transparent, rgba(6, 182, 212, 0.3), rgba(168, 85, 247, 0.3), rgba(236, 72, 153, 0.3), transparent)',
+                  'linear-gradient(360deg, transparent, rgba(6, 182, 212, 0.3), rgba(168, 85, 247, 0.3), rgba(236, 72, 153, 0.3), transparent)'
+                ]
+              }}
+              transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
+            />
+          </div>
+
+          {/* Hover Glow Effect */}
+          <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-purple-500/10 to-pink-500/10 opacity-50 blur-sm" />
+
+          <div className="relative z-10 p-8 sm:p-12">
+            {submitted ? (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5 }}
+                className="text-center py-12"
+              >
+                <motion.div
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ delay: 0.2, type: "spring", stiffness: 500 }}
+                  className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-green-400 to-cyan-400 rounded-full mb-6"
+                >
+                  <FiCheck className="text-white text-3xl" />
+                </motion.div>
+                
+                <motion.h3
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.4 }}
+                  className="text-2xl sm:text-3xl font-bold text-transparent bg-gradient-to-r from-cyan-400 via-green-400 to-purple-400 bg-clip-text mb-4"
+                >
+                  Message Sent Successfully!
+                </motion.h3>
+                
+                <motion.p
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.6 }}
+                  className="text-gray-300 text-lg"
+                >
+                  Thank you for reaching out! We'll get back to you within 24 hours.
+                  <br />
+                  <span className="text-cyan-400 font-medium">Get ready for your smile transformation!</span>
+                </motion.p>
+              </motion.div>
+            ) : (
+              <form
+                name="contact"
+                method="POST"
+                data-netlify="true"
+                netlify-honeypot="bot-field"
+                onSubmit={handleSubmit}
+                className="space-y-6"
+              >
+                <input type="hidden" name="form-name" value="contact" />
+                <input type="hidden" name="bot-field" />
+
+                {/* Name Field */}
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.1 }}
+                  className="relative group"
+                >
+                  <label className="block text-cyan-400 font-semibold mb-3 text-sm sm:text-base">
+                    Full Name
+                  </label>
+                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 via-purple-500/20 to-pink-500/20 rounded-xl opacity-0 group-focus-within:opacity-100 transition duration-300 blur-sm" />
+                  <div className="relative flex items-center">
+                    <FiUser className="absolute left-4 text-cyan-400 z-10" />
+                    <input
+                      type="text"
+                      name="name"
+                      value={form.name}
+                      onChange={handleChange}
+                      required
+                      placeholder="Enter your full name"
+                      className="w-full pl-12 pr-4 py-4 bg-slate-800/50 border border-cyan-500/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-pink-400 focus:ring-2 focus:ring-pink-400/20 transition-all backdrop-blur-sm text-sm sm:text-base"
+                    />
+                  </div>
+                </motion.div>
+
+                {/* Email Field */}
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  className="relative group"
+                >
+                  <label className="block text-cyan-400 font-semibold mb-3 text-sm sm:text-base">
+                    Email Address
+                  </label>
+                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 via-purple-500/20 to-pink-500/20 rounded-xl opacity-0 group-focus-within:opacity-100 transition duration-300 blur-sm" />
+                  <div className="relative flex items-center">
+                    <FiMail className="absolute left-4 text-cyan-400 z-10" />
+                    <input
+                      type="email"
+                      name="email"
+                      value={form.email}
+                      onChange={handleChange}
+                      required
+                      placeholder="Enter your email address"
+                      className="w-full pl-12 pr-4 py-4 bg-slate-800/50 border border-cyan-500/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-pink-400 focus:ring-2 focus:ring-pink-400/20 transition-all backdrop-blur-sm text-sm sm:text-base"
+                    />
+                  </div>
+                </motion.div>
+
+                {/* Message Field */}
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                  className="relative group"
+                >
+                  <label className="block text-cyan-400 font-semibold mb-3 text-sm sm:text-base">
+                    Your Message
+                  </label>
+                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 via-purple-500/20 to-pink-500/20 rounded-xl opacity-0 group-focus-within:opacity-100 transition duration-300 blur-sm" />
+                  <div className="relative flex items-start">
+                    <FiMessageSquare className="absolute left-4 top-4 text-cyan-400 z-10" />
+                    <textarea
+                      name="message"
+                      value={form.message}
+                      onChange={handleChange}
+                      required
+                      rows={5}
+                      placeholder="Tell us about your dental needs and how we can help..."
+                      className="w-full pl-12 pr-4 py-4 bg-slate-800/50 border border-cyan-500/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-pink-400 focus:ring-2 focus:ring-pink-400/20 transition-all backdrop-blur-sm resize-none text-sm sm:text-base"
+                    />
+                  </div>
+                </motion.div>
+
+                {/* Submit Button */}
+                <motion.button
+                  type="submit"
+                  disabled={sending}
+                  className="relative w-full mt-8 px-8 py-4 text-lg font-bold text-white rounded-xl overflow-hidden group disabled:opacity-50 disabled:cursor-not-allowed"
+                  style={{
+                    background: 'linear-gradient(135deg, #ec4899 0%, #8b5cf6 50%, #06b6d4 100%)'
+                  }}
+                  whileHover={{ scale: sending ? 1 : 1.02 }}
+                  whileTap={{ scale: sending ? 1 : 0.98 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                >
+                  {/* Button glow effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-pink-400/20 via-purple-400/20 to-cyan-400/20 opacity-0 group-hover:opacity-100 transition duration-300" />
+                  
+                  {/* Button content */}
+                  <span className="relative z-10 flex items-center justify-center gap-3">
+                    {sending ? (
+                      <>
+                        <motion.div
+                          className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full"
+                          animate={{ rotate: 360 }}
+                          transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                        />
+                        Sending Message...
+                      </>
+                    ) : (
+                      <>
+                        <FiSend className="text-xl" />
+                        Send Message
+                      </>
+                    )}
+                  </span>
+
+                  {/* Button shine effect */}
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+                    initial={{ x: '-100%' }}
+                    whileHover={{ x: '100%' }}
+                    transition={{ duration: 0.6 }}
+                  />
+                </motion.button>
+              </form>
+            )}
+          </div>
+        </motion.div>
+
+        {/* Contact Info Cards */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.8 }}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12"
+        >
+          {[
+            { icon: "📞", title: "Call Us", info: "+1 (555) 123-4567", gradient: "from-cyan-400 to-blue-400" },
+            { icon: "📧", title: "Email Us", info: "info@oracdental.com", gradient: "from-pink-400 to-purple-400" },
+            { icon: "📍", title: "Visit Us", info: "123 Dental Ave, City", gradient: "from-purple-400 to-cyan-400" }
+          ].map((contact, idx) => (
+            <motion.div
+              key={contact.title}
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ 
+                duration: 0.5, 
+                delay: idx * 0.1 + 0.9,
+                type: "spring",
+                stiffness: 200
+              }}
+              className="group p-6 rounded-xl backdrop-blur-sm border border-cyan-500/20 hover:border-pink-400/40 transition-all duration-300 text-center"
+              style={{
+                background: `linear-gradient(135deg, 
+                  rgba(15, 23, 42, 0.8) 0%, 
+                  rgba(88, 28, 135, 0.4) 100%
+                )`
+              }}
+              whileHover={{ scale: 1.05, y: -5 }}
             >
-              Send Message
-            </motion.button>
-          </form>
-        )}
-      </motion.div>
+              <div className="text-3xl mb-3">{contact.icon}</div>
+              <h3 className={`text-lg font-bold mb-2 text-transparent bg-gradient-to-r ${contact.gradient} bg-clip-text`}>
+                {contact.title}
+              </h3>
+              <p className="text-gray-300 text-sm">{contact.info}</p>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
     </section>
   );
 }
