@@ -78,10 +78,10 @@ export default function WhyUsSection() {
       className="relative py-20 px-4 overflow-hidden"
       style={{
         background: `linear-gradient(135deg, 
-          rgba(15, 23, 42, 1) 0%, 
-          rgba(88, 28, 135, 0.8) 30%,
-          rgba(15, 23, 42, 1) 70%,
-          rgba(30, 41, 59, 1) 100%
+          #08445c 0%, 
+          rgb(18,98,92) 30%,
+          #08445c 70%,
+          #08445c 100%
         )`
       }}
     >
@@ -199,9 +199,9 @@ export default function WhyUsSection() {
                   className="absolute inset-0"
                   style={{
                     background: `linear-gradient(135deg, 
-                      rgba(15, 23, 42, 0.9) 0%, 
-                      rgba(88, 28, 135, 0.6) 50%,
-                      rgba(15, 23, 42, 0.9) 100%
+                      #08445c 0%, 
+                      rgb(18,88,92) 50%,
+                      #08445c 100%
                     )`
                   }}
                 />

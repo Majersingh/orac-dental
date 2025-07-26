@@ -109,8 +109,8 @@ export default function Navbar() {
     <motion.nav 
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
         scrolled 
-          ? 'bg-slate-900/95 backdrop-blur-md border-b border-cyan-500/20 shadow-lg shadow-cyan-500/10' 
-          : 'bg-gradient-to-r from-slate-900/80 via-purple-900/80 to-slate-900/80 backdrop-blur-sm border-b border-purple-500/20'
+          ? 'bg-[#08445c] backdrop-blur-md border-b border-purple-500/20 shadow-lg shadow-cyan-500/10' 
+          : 'bg-gradient-to-r from-slate-900/80 via-[#08445c] to-slate-900/80 backdrop-blur-sm border-b border-purple-500/20'
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -161,12 +161,12 @@ export default function Navbar() {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 via-purple-500/20 to-pink-500/20 rounded-lg opacity-0 group-hover:opacity-100 transition duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 via-[#08445c] to-pink-500/20 rounded-lg opacity-0 group-hover:opacity-100 transition duration-300" />
               <span className="relative z-10 group-hover:text-cyan-300 transition-colors">
                 {item.label}
               </span>
               <motion.div
-                className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
+                className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-cyan-500 via-[#08445c] to-pink-500 rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
               />
             </motion.a>
           ))}
@@ -219,7 +219,7 @@ export default function Navbar() {
             
             {/* Drawer */}
             <motion.div
-              className="absolute right-0 top-0 h-full w-72 sm:w-80 bg-gradient-to-br from-slate-900/98 via-purple-900/98 to-slate-900/98 backdrop-blur-xl border-l border-cyan-500/20 shadow-2xl shadow-cyan-500/10"
+              className="absolute right-0 top-0 h-full w-72 sm:w-80 bg-gradient-to-br from-slate-900/98 via-[#08445c] to-slate-900/98 backdrop-blur-xl border-l border-cyan-500/20 shadow-2xl shadow-cyan-500/10"
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
@@ -268,7 +268,7 @@ export default function Navbar() {
                 </motion.button>
 
                 {/* Navigation items */}
-                <nav className="p-6 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 " role="navigation">
+                <nav className="p-6 bg-gradient-to-br from-slate-900 via-[#08445c] to-slate-900 " role="navigation">
                   {navItems.map((item, index) => (
                     <motion.a
                       key={item.label}
@@ -305,13 +305,7 @@ export default function Navbar() {
                 </nav>
 
                 {/* Footer */}
-                <div className="mt-auto pt-8">
-                  <motion.div
-                    className="h-px bg-gradient-to-r from-transparent via-cyan-500 to-transparent"
-                    initial={{ scaleX: 0 }}
-                    animate={{ scaleX: 1 }}
-                    transition={{ delay: 0.5, duration: 1 }}
-                  />
+                <div className="pb-4 bg-gradient-to-br from-slate-900 via-[#08445c] to-slate-900 ">
                   <motion.p
                     className="text-center text-sm text-gray-400 mt-4 font-medium"
                     initial={{ opacity: 0 }}

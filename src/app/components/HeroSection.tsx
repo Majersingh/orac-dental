@@ -213,7 +213,7 @@ export default function HeroSection({ onBook }: HeroSectionProps) {
   // Loading skeleton
   if (!isLoaded) {
     return (
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-[#08445c] to-slate-900">
         <div className="relative z-20 flex flex-col items-center justify-center text-center px-4 w-full max-w-7xl mx-auto">
           <div className="w-full max-w-4xl h-32 bg-gradient-to-r from-slate-800/50 to-slate-700/50 rounded-3xl animate-pulse mb-8" />
           <div className="w-64 h-12 bg-gradient-to-r from-slate-800/50 to-slate-700/50 rounded-2xl animate-pulse mb-8" />
@@ -228,7 +228,7 @@ export default function HeroSection({ onBook }: HeroSectionProps) {
   }
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 px-4 sm:px-6 lg:px-8">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-[#08445c] to-slate-900 px-4 sm:px-6 lg:px-8">
       {/* Optimized Background Images */}
       <div className="absolute inset-0 w-full h-full">
         <AnimatePresence mode="wait">
@@ -257,7 +257,7 @@ export default function HeroSection({ onBook }: HeroSectionProps) {
       </div>
 
       {/* Simplified Overlays */}
-      <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/15 via-purple-600/25 to-pink-500/15" />
+      <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/15 via-[#08445c] to-pink-500/15" />
       <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/30" />
 
       {/* Floating Particles */}
@@ -353,7 +353,7 @@ export default function HeroSection({ onBook }: HeroSectionProps) {
             transition={{ type: 'spring', stiffness: 400, damping: 25 }}
             className="relative px-6 sm:px-8 lg:px-12 py-3 sm:py-4 lg:py-6 text-sm sm:text-base lg:text-xl font-bold text-white bg-gradient-to-r from-cyan-600 via-purple-600 to-pink-600 rounded-xl sm:rounded-2xl border border-cyan-400/30 backdrop-blur-sm overflow-hidden w-full max-w-xs sm:max-w-sm lg:max-w-md"
             style={{
-              background: 'linear-gradient(135deg, rgba(6, 182, 212, 0.8), rgba(147, 51, 234, 0.8), rgba(236, 72, 153, 0.8))',
+              background: 'linear-gradient(135deg, rgba(6, 182, 212, 0.8), rgba(147, 51, 234, 0.8), rgba(26, 72, 153, 0.8))',
               boxShadow: '0 0 20px rgba(6, 182, 212, 0.3)'
             }}
           >

@@ -39,10 +39,10 @@ export default function Footer() {
       className="relative overflow-hidden"
       style={{
         background: `linear-gradient(135deg, 
-          rgba(15, 23, 42, 1) 0%, 
-          rgba(88, 28, 135, 0.9) 30%,
-          rgba(15, 23, 42, 1) 70%,
-          rgba(30, 41, 59, 1) 100%
+           #08445c 0%, 
+            rgb(18,98,92) 30%,
+            #08445c 70%,
+            #08445c 100%
         )`
       }}
     >
@@ -220,8 +220,8 @@ export default function Footer() {
                   { name: "Our Team", href: "#team" },
                   { name: "About Us", href: "#about" },
                   { name: "Contact", href: "#contact" },
-                  { name: "Testimonials", href: "#testimonials" },
-                  { name: "Book Appointment", href: "#appointment" }
+                  // { name: "Testimonials", href: "#testimonials" },
+                  // { name: "Book Appointment", href: "#appointment" }
                 ].map((link, idx) => (
                   <motion.a
                     key={link.name}
@@ -253,17 +253,20 @@ export default function Footer() {
                 <h5 className="text-cyan-400 font-semibold mb-3 text-sm">Stay Updated</h5>
                 <div className="flex gap-2" id='subscribebyemail'>
                   <input
+                    id='subscribebyuseremail'
                     type="email"
                     placeholder="Your email"
                     className="flex-1 px-3 py-2 bg-slate-800/50 border border-cyan-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-pink-400 text-xs"
                   />
-                  <motion.button
-                    className="px-4 py-2 bg-gradient-to-r from-pink-500 to-cyan-400 rounded-lg text-white text-xs font-semibold"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    Subscribe
-                  </motion.button>
+                 <a href="mailto:theoractdental@gmail.com?subject=New%20email%20subscriber">
+                    <motion.button
+                      className="px-4 py-2 bg-gradient-to-r from-pink-500 to-cyan-400 rounded-lg text-white text-xs font-semibold"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      Subscribe
+                    </motion.button>
+                  </a>
                 </div>
               </motion.div>
             </motion.div>

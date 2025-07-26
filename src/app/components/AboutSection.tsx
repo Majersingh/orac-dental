@@ -40,10 +40,10 @@ export default function AboutSection({onBook}:AboutSection) {
       className="relative py-20 px-4 overflow-hidden"
       style={{
         background: `linear-gradient(135deg, 
-          rgba(15, 23, 42, 1) 0%, 
-          rgba(88, 28, 135, 0.8) 30%,
-          rgba(15, 23, 42, 1) 70%,
-          rgba(30, 41, 59, 1) 100%
+          #08445c 30%, 
+          rgb(18,98,92) 30%,
+          #08445c 70%,
+          #08445c 100%
         )`
       }}
     >
@@ -223,9 +223,10 @@ export default function AboutSection({onBook}:AboutSection) {
                   className="absolute inset-0"
                   style={{
                     background: `linear-gradient(135deg, 
-                      rgba(15, 23, 42, 0.9) 0%, 
-                      rgba(88, 28, 135, 0.6) 50%,
-                      rgba(15, 23, 42, 0.9) 100%
+                     #08445c 30%, 
+                    rgb(18,98,92) 30%,
+                    #08445c 70%,
+                    #08445c 100%
                     )`
                   }}
                 />
@@ -320,13 +321,13 @@ export default function AboutSection({onBook}:AboutSection) {
               <motion.button
                 className="relative px-8 py-4 text-lg font-bold text-white rounded-xl overflow-hidden group"
                 style={{
-                  background: 'linear-gradient(135deg, #ec4899 0%, #8b5cf6 50%, #06b6d4 100%)'
+                  background: 'linear-gradient(135deg, #08445c 0%, #8b5cf6 50%, #06b6d4 100%)'
                 }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={onBook}
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-pink-400/20 via-purple-400/20 to-cyan-400/20 opacity-0 group-hover:opacity-100 transition duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#b72ec9] via-purple-400/20 to-cyan-400/20 opacity-0 group-hover:opacity-100 transition duration-300" />
                 <span className="relative z-10">Schedule Your Transformation</span>
                 
                 {/* Button shine effect */}

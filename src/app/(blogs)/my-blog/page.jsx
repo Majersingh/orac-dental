@@ -1,6 +1,8 @@
 'use client'
+import { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import AppointmentModal from "@/app/components/AppointmentModal";
 import { FiCalendar, FiShield, FiHeart, FiTrendingUp, FiAlertTriangle, FiCheckCircle } from "react-icons/fi";
 
 // Floating particles component
@@ -66,19 +68,19 @@ export default  ()=> {
     { number: "50%", label: "of adults have gum disease", color: "text-pink-400" },
     { number: "90%", label: "early detection success rate", color: "text-purple-400" }
   ];
-
+  const [modalOpen, setModalOpen] = useState(false);
   return (
     <article 
       className="relative py-20 px-4 overflow-hidden"
       style={{
         background: `linear-gradient(135deg, 
-          rgba(15, 23, 42, 1) 0%, 
-          rgba(88, 28, 135, 0.8) 30%,
-          rgba(15, 23, 42, 1) 70%,
-          rgba(30, 41, 59, 1) 100%
+           #08445c 30%, 
+          rgb(18,98,92) 30%,
+          #08445c 70%,
+          #08445c 100%
         )`
       }}
-    >
+    > <AppointmentModal open={modalOpen} onClose={() => setModalOpen(false)} />
       {/* Background Effects */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-900/50 via-purple-900/30 to-slate-900/50" />
       
@@ -437,7 +439,7 @@ export default  ()=> {
                 whileTap={{ scale: 0.95 }}
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-pink-400/20 via-purple-400/20 to-cyan-400/20 opacity-0 group-hover:opacity-100 transition duration-300" />
-                <Link href='/#contact' className="relative z-10">Schedule Your Checkup</Link>
+                <motion.button onClick={()=>setModalOpen(true)} className="relative z-10">Schedule Your Checkup</motion.button>
                 
                 <motion.div
                   className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"

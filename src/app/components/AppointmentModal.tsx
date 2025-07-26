@@ -107,10 +107,10 @@ export default function AppointmentModal({ open, onClose }: AppointmentModalProp
             className="relative w-full max-w-lg max-h-[90vh] overflow-hidden rounded-2xl"
             style={{
               background: `linear-gradient(135deg, 
-                rgba(15, 23, 42, 0.95) 0%, 
-                rgba(88, 28, 135, 0.90) 30%,
-                rgba(15, 23, 42, 0.95) 70%,
-                rgba(30, 41, 59, 0.95) 100%
+                #08445c 30%, 
+                rgb(18,98,92) 30%,
+                #08445c 70%,
+                #08445c 100%
               )`
             }}
           >

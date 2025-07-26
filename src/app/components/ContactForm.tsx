@@ -79,10 +79,10 @@ export default function ContactForm() {
       className="relative py-20 px-4 flex justify-center items-center overflow-hidden"
       style={{
         background: `linear-gradient(135deg, 
-          rgba(15, 23, 42, 1) 0%, 
-          rgba(88, 28, 135, 0.8) 30%,
-          rgba(15, 23, 42, 1) 70%,
-          rgba(30, 41, 59, 1) 100%
+          #08445c 0%, 
+          rgb(18,98,92) 30%,
+          #08445c 70%,
+          #08445c 100%
         )`
       }}
     >
@@ -170,9 +170,10 @@ export default function ContactForm() {
           className="relative rounded-2xl overflow-hidden backdrop-blur-xl border border-cyan-500/30"
           style={{
             background: `linear-gradient(135deg, 
-              rgba(15, 23, 42, 0.9) 0%, 
-              rgba(88, 28, 135, 0.6) 50%,
-              rgba(15, 23, 42, 0.9) 100%
+              #08445c 30%, 
+              rgb(18,98,92) 30%,
+              #08445c 70%,
+              #08445c 100%
             )`
           }}
         >
@@ -340,7 +341,7 @@ export default function ContactForm() {
                   disabled={sending}
                   className="relative w-full mt-8 px-8 py-4 text-lg font-bold text-white rounded-xl overflow-hidden group disabled:opacity-50 disabled:cursor-not-allowed"
                   style={{
-                    background: 'linear-gradient(135deg, #ec4899 0%, #8b5cf6 50%, #06b6d4 100%)'
+                    background: 'linear-gradient(135deg, #08445c 0%, #8b5cf6 50%, #06b6d4 100%)'
                   }}
                   whileHover={{ scale: sending ? 1 : 1.02 }}
                   whileTap={{ scale: sending ? 1 : 0.98 }}
@@ -350,7 +351,7 @@ export default function ContactForm() {
                   transition={{ duration: 0.6, delay: 0.4 }}
                 >
                   {/* Button glow effect */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-pink-400/20 via-purple-400/20 to-cyan-400/20 opacity-0 group-hover:opacity-100 transition duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-pink-400/50 via-purple-400/20 to-cyan-400/20 opacity-0 group-hover:opacity-100 transition duration-300" />
                   
                   {/* Button content */}
                   <span className="relative z-10 flex items-center justify-center gap-3">
@@ -393,9 +394,9 @@ export default function ContactForm() {
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12"
         >
           {[
-            { icon: "📞", title: "Call Us", info: "+1 (555) 123-4567", gradient: "from-cyan-400 to-blue-400" },
-            { icon: "📧", title: "Email Us", info: "info@oracdental.com", gradient: "from-pink-400 to-purple-400" },
-            { icon: "📍", title: "Visit Us", info: "123 Dental Ave, City", gradient: "from-purple-400 to-cyan-400" }
+            { icon: "📞", title: "Call Us", info: "+91 8171910245", gradient: "from-cyan-400 to-blue-400" },
+            { icon: "📧", title: "Email Us", info: "theoracdental@gmail.com", gradient: "from-pink-400 to-purple-400" },
+            { icon: "📍", title: "Visit Us", info: "F-123, Platinum Plaza, Surat Navsari Main Road, Unn, Surat -394210", gradient: "from-purple-400 to-cyan-400" }
           ].map((contact, idx) => (
             <motion.div
               key={contact.title}
