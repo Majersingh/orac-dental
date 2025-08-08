@@ -58,7 +58,7 @@ const TeamParticles = () => {
       {[...Array(12)].map((_, i) => (
         <motion.div
           key={`team-particle-${i}`}
-          className="absolute w-1 h-1 bg-cyan-400 rounded-full opacity-30"
+          className="absolute w-1 h-1 bg-teal-300 rounded-full opacity-30"
           initial={{
             x: Math.random() * 100 + "%",
             y: Math.random() * 100 + "%",
@@ -88,14 +88,14 @@ export default function TeamSection() {
       style={{
         background: `linear-gradient(135deg, 
            #08445c 0%, 
-          rgb(18,98,92) 30%,
-          #08445c 70%,
-          #08445c 100%
+            rgb(18,98,92) 30%,
+            #08445c 70%,
+            #08445c 100%
         )`
       }}
     >
       {/* Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900/50 via-purple-900/30 to-slate-900/50" />
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900/50 via-teal-900/30 to-slate-900/50" />
       
       {/* Floating Particles */}
       <TeamParticles />
@@ -106,8 +106,8 @@ export default function TeamSection() {
           className="absolute inset-0" 
           style={{
             backgroundImage: `
-              linear-gradient(45deg, rgba(6, 182, 212, 0.1) 1px, transparent 1px),
-              linear-gradient(-45deg, rgba(168, 85, 247, 0.1) 1px, transparent 1px)
+              linear-gradient(45deg, rgba(20, 184, 166, 0.1) 1px, transparent 1px),
+              linear-gradient(-45deg, rgba(94, 234, 212, 0.1) 1px, transparent 1px)
             `,
             backgroundSize: '30px 30px'
           }} 
@@ -117,7 +117,7 @@ export default function TeamSection() {
       {/* Animated Border */}
       <div className="absolute inset-0">
         <motion.div
-          className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-pink-500 to-transparent"
+          className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-teal-400 to-transparent"
           animate={{
             x: ['-100%', '100%'],
           }}
@@ -139,7 +139,7 @@ export default function TeamSection() {
             transition={{ duration: 0.6 }}
             className="inline-block mb-6"
           >
-            <span className="px-6 py-3 bg-gradient-to-r from-cyan-500/20 via-purple-500/20 to-pink-500/20 rounded-full text-cyan-400 text-sm font-semibold border border-cyan-500/30 backdrop-blur-sm">
+            <span className="px-6 py-3 bg-gradient-to-r from-teal-500/20 via-teal-300/20 to-white/20 rounded-full text-teal-300 text-sm font-semibold border border-teal-400/30 backdrop-blur-sm">
               Meet Our Experts
             </span>
           </motion.div>
@@ -149,7 +149,7 @@ export default function TeamSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-black text-transparent bg-gradient-to-r from-cyan-400 via-pink-400 to-purple-400 bg-clip-text mb-6"
+            className="text-4xl sm:text-5xl lg:text-6xl font-black text-transparent bg-gradient-to-r from-teal-300 via-white to-teal-200 bg-clip-text mb-6"
           >
             Our Expert Team
           </motion.h2>
@@ -162,7 +162,7 @@ export default function TeamSection() {
             className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
           >
             Meet our world-class dental professionals dedicated to providing you with{" "}
-            <span className="text-transparent bg-gradient-to-r from-cyan-400 to-pink-400 bg-clip-text font-semibold">
+            <span className="text-transparent bg-gradient-to-r from-teal-300 to-white bg-clip-text font-semibold">
               exceptional care
             </span>{" "}
             and innovative treatments
@@ -191,22 +191,22 @@ export default function TeamSection() {
               className="group relative cursor-pointer"
             >
               {/* Card Container */}
-              <div className="relative h-full rounded-2xl overflow-hidden backdrop-blur-xl border border-cyan-500/30 group-hover:border-pink-400/50 transition-all duration-300">
+              <div className="relative h-full rounded-2xl overflow-hidden backdrop-blur-xl border border-teal-400/30 group-hover:border-teal-300/50 transition-all duration-300">
                 {/* Background Gradient */}
                 <div 
                   className="absolute inset-0"
                   style={{
                     background: `linear-gradient(135deg, 
-                       #08445c 30%, 
-                      rgb(18,98,92) 30%,
-                      #08445c 70%,
-                      #08445c 100%
+                       #0f766e 30%, 
+                      #134e4a 30%,
+                      #0f766e 70%,
+                      #0f766e 100%
                     )`
                   }}
                 />
                 
                 {/* Hover Glow Effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-purple-500/10 to-pink-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm" />
+                <div className="absolute inset-0 bg-gradient-to-r from-teal-500/10 via-teal-300/10 to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm" />
                 
                 {/* Content */}
                 <div className="relative z-10 p-8 text-center">
@@ -216,7 +216,7 @@ export default function TeamSection() {
                     whileHover={{ scale: 1.1 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="w-28 h-28 sm:w-32 sm:h-32 mx-auto rounded-full overflow-hidden border-4 border-gradient-to-r from-cyan-400 to-pink-400 p-1 bg-gradient-to-r from-cyan-400 to-pink-400">
+                    <div className="w-28 h-28 sm:w-32 sm:h-32 mx-auto rounded-full overflow-hidden border-4 border-gradient-to-r from-teal-300 to-white p-1 bg-gradient-to-r from-teal-300 to-white">
                       <div className="w-full h-full rounded-full overflow-hidden bg-slate-800">
                         <img
                           src={member.image}
@@ -228,7 +228,7 @@ export default function TeamSection() {
                     
                     {/* Floating Badge */}
                     <motion.div
-                      className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-r from-pink-500 to-cyan-400 rounded-full flex items-center justify-center text-white text-xs font-bold"
+                      className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-r from-teal-500 to-teal-300 rounded-full flex items-center justify-center text-white text-xs font-bold"
                       animate={{
                         rotate: [0, 360],
                       }}
@@ -244,14 +244,14 @@ export default function TeamSection() {
                   
                   {/* Name */}
                   <motion.h3
-                    className="text-xl sm:text-2xl font-bold text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-cyan-400 group-hover:to-pink-400 group-hover:bg-clip-text transition-all duration-300 mb-2"
+                    className="text-xl sm:text-2xl font-bold text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-teal-300 group-hover:to-white group-hover:bg-clip-text transition-all duration-300 mb-2"
                     whileHover={{ scale: 1.05 }}
                   >
                     {member.name}
                   </motion.h3>
                   
                   {/* Specialty */}
-                  <div className="text-cyan-400 font-semibold mb-2">
+                  <div className="text-teal-300 font-semibold mb-2">
                     {member.specialty}
                   </div>
                   
@@ -262,7 +262,7 @@ export default function TeamSection() {
                   
                   {/* Animated Divider */}
                   <motion.div
-                    className="h-px bg-gradient-to-r from-transparent via-pink-500 to-transparent mb-4"
+                    className="h-px bg-gradient-to-r from-transparent via-teal-400 to-transparent mb-4"
                     initial={{ scaleX: 0 }}
                     whileInView={{ scaleX: 1 }}
                     viewport={{ once: true }}
@@ -276,7 +276,7 @@ export default function TeamSection() {
                       {member.expertise.map((skill, idx) => (
                         <motion.span
                           key={skill}
-                          className="px-3 py-1 bg-gradient-to-r from-cyan-500/20 to-pink-500/20 rounded-full text-xs text-cyan-300 border border-cyan-500/30"
+                          className="px-3 py-1 bg-gradient-to-r from-teal-500/20 to-white/20 rounded-full text-xs text-teal-300 border border-teal-400/30"
                           initial={{ opacity: 0, scale: 0.8 }}
                           whileInView={{ opacity: 1, scale: 1 }}
                           transition={{ delay: idx * 0.1 }}
@@ -294,7 +294,7 @@ export default function TeamSection() {
                   {[...Array(4)].map((_, particleIdx) => (
                     <motion.div
                       key={particleIdx}
-                      className="absolute w-2 h-2 bg-cyan-400 rounded-full"
+                      className="absolute w-2 h-2 bg-teal-300 rounded-full"
                       style={{
                         left: `${20 + particleIdx * 20}%`,
                         top: `${30 + particleIdx * 15}%`,

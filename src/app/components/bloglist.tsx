@@ -12,7 +12,7 @@ const BlogParticles = () => {
       {[...Array(10)].map((_, i) => (
         <motion.div
           key={`blog-particle-${i}`}
-          className="absolute w-1 h-1 bg-cyan-400 rounded-full opacity-30"
+          className="absolute w-1 h-1 bg-teal-300 rounded-full opacity-30"
           initial={{
             x: Math.random() * 100 + "%",
             y: Math.random() * 100 + "%",
@@ -42,19 +42,20 @@ const BlogSkeleton = () => (
         key={i}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className="relative rounded-2xl overflow-hidden backdrop-blur-xl border border-cyan-500/30"
+        className="relative rounded-2xl overflow-hidden backdrop-blur-xl border border-teal-400/30"
         style={{
           background: `linear-gradient(135deg, 
-            rgba(15, 23, 42, 0.9) 0%, 
-            rgba(88, 28, 135, 0.6) 50%,
-            rgba(15, 23, 42, 0.9) 100%
+             #08445c 0%, 
+              rgb(18,98,92) 30%,
+              #08445c 70%,
+              #08445c 100%
           )`
         }}
       >
         <div className="p-6">
           {/* Skeleton header */}
           <motion.div
-            className="h-4 bg-gradient-to-r from-cyan-500/20 to-pink-500/20 rounded mb-4"
+            className="h-4 bg-gradient-to-r from-teal-500/20 to-white/20 rounded mb-4"
             animate={{ opacity: [0.5, 1, 0.5] }}
             transition={{ duration: 1.5, repeat: Infinity }}
           />
@@ -65,13 +66,13 @@ const BlogSkeleton = () => (
             animate={{ opacity: [0.3, 0.7, 0.3] }}
             transition={{ duration: 1.5, repeat: Infinity, delay: 0.2 }}
           >
-            <div className="h-3 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 rounded w-full" />
-            <div className="h-3 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 rounded w-3/4" />
+            <div className="h-3 bg-gradient-to-r from-teal-300/20 to-teal-500/20 rounded w-full" />
+            <div className="h-3 bg-gradient-to-r from-teal-300/20 to-teal-500/20 rounded w-3/4" />
           </motion.div>
           
           {/* Skeleton button */}
           <motion.div
-            className="h-10 bg-gradient-to-r from-pink-500/20 to-cyan-500/20 rounded-lg"
+            className="h-10 bg-gradient-to-r from-teal-500/20 to-white/20 rounded-lg"
             animate={{ opacity: [0.4, 0.8, 0.4] }}
             transition={{ duration: 1.5, repeat: Infinity, delay: 0.4 }}
           />
@@ -109,15 +110,15 @@ export default function BlogList() {
       className="relative py-20 px-4 overflow-hidden"
       style={{
         background: `linear-gradient(135deg, 
-           #08445c 0%, 
-          rgb(18,98,92) 30%,
-          #08445c 70%,
-          #08445c 100%
+           #0f766e 0%, 
+          #134e4a 30%,
+          #0f766e 70%,
+          #0f766e 100%
         )`
       }}
     >
       {/* Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900/50 via-purple-900/30 to-slate-900/50" />
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900/50 via-teal-900/30 to-slate-900/50" />
       
       {/* Floating Particles */}
       <BlogParticles />
@@ -128,8 +129,8 @@ export default function BlogList() {
           className="absolute inset-0" 
           style={{
             backgroundImage: `
-              linear-gradient(45deg, rgba(6, 182, 212, 0.1) 1px, transparent 1px),
-              linear-gradient(-45deg, rgba(168, 85, 247, 0.1) 1px, transparent 1px)
+              linear-gradient(45deg, rgba(20, 184, 166, 0.1) 1px, transparent 1px),
+              linear-gradient(-45deg, rgba(94, 234, 212, 0.1) 1px, transparent 1px)
             `,
             backgroundSize: '40px 40px'
           }} 
@@ -139,7 +140,7 @@ export default function BlogList() {
       {/* Animated Border */}
       <div className="absolute inset-0">
         <motion.div
-          className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-pink-500 to-transparent"
+          className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-teal-400 to-transparent"
           animate={{
             x: ['-100%', '100%'],
           }}
@@ -161,7 +162,7 @@ export default function BlogList() {
             transition={{ duration: 0.6 }}
             className="inline-block mb-6"
           >
-            <span className="px-6 py-3 bg-gradient-to-r from-cyan-500/20 via-purple-500/20 to-pink-500/20 rounded-full text-cyan-400 text-sm font-semibold border border-cyan-500/30 backdrop-blur-sm">
+            <span className="px-6 py-3 bg-gradient-to-r from-teal-500/20 via-teal-300/20 to-white/20 rounded-full text-teal-300 text-sm font-semibold border border-teal-400/30 backdrop-blur-sm">
               <FiBook className="inline mr-2" />
               Knowledge Hub
             </span>
@@ -172,7 +173,7 @@ export default function BlogList() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-black text-transparent bg-gradient-to-r from-cyan-400 via-pink-400 to-purple-400 bg-clip-text mb-6"
+            className="text-4xl sm:text-5xl lg:text-6xl font-black text-transparent bg-gradient-to-r from-teal-300 via-white to-teal-200 bg-clip-text mb-6"
           >
             Dental Insights
           </motion.h2>
@@ -185,7 +186,7 @@ export default function BlogList() {
             className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
           >
             Explore our latest articles on{" "}
-            <span className="text-transparent bg-gradient-to-r from-cyan-400 to-pink-400 bg-clip-text font-semibold">
+            <span className="text-transparent bg-gradient-to-r from-teal-300 to-white bg-clip-text font-semibold">
               cutting-edge dental technology
             </span>{" "}
             and oral health innovations
@@ -207,8 +208,8 @@ export default function BlogList() {
             animate={{ opacity: 1, y: 0 }}
             className="text-center py-16"
           >
-            <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-cyan-500/20 to-pink-500/20 rounded-full mb-6">
-              <FiBook className="text-3xl text-cyan-400" />
+            <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-teal-500/20 to-white/20 rounded-full mb-6">
+              <FiBook className="text-3xl text-teal-300" />
             </div>
             <h3 className="text-2xl font-bold text-white mb-4">No Blogs Available</h3>
             <p className="text-gray-400">Check back soon for exciting dental insights and articles!</p>
@@ -235,22 +236,22 @@ export default function BlogList() {
                 className="group relative cursor-pointer"
               >
                 {/* Blog Card */}
-                <div className="relative h-full rounded-2xl overflow-hidden backdrop-blur-xl border border-cyan-500/30 group-hover:border-pink-400/50 transition-all duration-300">
+                <div className="relative h-full rounded-2xl overflow-hidden backdrop-blur-xl border border-teal-400/30 group-hover:border-teal-300/50 transition-all duration-300">
                   {/* Background Gradient */}
                   <div 
                     className="absolute inset-0"
                     style={{
                       background: `linear-gradient(135deg, 
-                          #08445c 0%, 
-                          rgb(18,98,92) 30%,
-                          #08445c 70%,
-                          #08445c 100%
+                          #0f766e 0%, 
+                          #134e4a 30%,
+                          #0f766e 70%,
+                          #0f766e 100%
                       )`
                     }}
                   />
                   
                   {/* Hover Glow Effect */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-purple-500/10 to-pink-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-teal-500/10 via-teal-300/10 to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm" />
                   
                   {/* Content */}
                   <div className="relative z-10 p-6 h-full flex flex-col">
@@ -260,13 +261,13 @@ export default function BlogList() {
                       whileHover={{ rotate: 360, scale: 1.1 }}
                       transition={{ duration: 0.5 }}
                     >
-                      <div className="w-12 h-12 bg-gradient-to-r from-cyan-500/20 to-pink-500/20 rounded-xl backdrop-blur-sm border border-cyan-500/30 flex items-center justify-center text-2xl group-hover:bg-gradient-to-r group-hover:from-cyan-500/30 group-hover:to-pink-500/30 transition-all duration-300">
+                      <div className="w-12 h-12 bg-gradient-to-r from-teal-500/20 to-white/20 rounded-xl backdrop-blur-sm border border-teal-400/30 flex items-center justify-center text-2xl group-hover:bg-gradient-to-r group-hover:from-teal-500/30 group-hover:to-white/30 transition-all duration-300">
                         📚
                       </div>
                     </motion.div>
                     
                     {/* Title */}
-                    <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-cyan-400 group-hover:to-pink-400 group-hover:bg-clip-text transition-all duration-300 mb-3 capitalize leading-tight">
+                    <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-teal-300 group-hover:to-white group-hover:bg-clip-text transition-all duration-300 mb-3 capitalize leading-tight">
                       {slug.replace(/[-_]/g, ' ')}
                     </h3>
                     
@@ -278,11 +279,11 @@ export default function BlogList() {
                     {/* Meta Info */}
                     <div className="flex items-center gap-4 text-xs text-gray-400 mb-4">
                       <div className="flex items-center gap-1">
-                        <FiUser className="text-cyan-400" />
+                        <FiUser className="text-teal-300" />
                         <span>Dr. Team</span>
                       </div>
                       <div className="flex items-center gap-1">
-                        <FiClock className="text-pink-400" />
+                        <FiClock className="text-white" />
                         <span>{getReadingTime(slug)} min read</span>
                       </div>
                     </div>
@@ -293,7 +294,7 @@ export default function BlogList() {
                       className="group/link relative"
                     >
                       <motion.div
-                        className="w-full px-6 py-3 bg-gradient-to-r from-pink-500 to-cyan-400 rounded-xl text-white font-semibold text-center overflow-hidden group-hover:from-cyan-500 group-hover:to-pink-500 transition-all duration-300"
+                        className="w-full px-6 py-3 bg-gradient-to-r from-teal-500 to-teal-300 rounded-xl text-white font-semibold text-center overflow-hidden group-hover:from-teal-400 group-hover:to-white transition-all duration-300"
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
                       >
@@ -323,7 +324,7 @@ export default function BlogList() {
                     {[...Array(4)].map((_, particleIdx) => (
                       <motion.div
                         key={particleIdx}
-                        className="absolute w-2 h-2 bg-cyan-400 rounded-full"
+                        className="absolute w-2 h-2 bg-teal-300 rounded-full"
                         style={{
                           left: `${20 + particleIdx * 20}%`,
                           top: `${30 + particleIdx * 15}%`,

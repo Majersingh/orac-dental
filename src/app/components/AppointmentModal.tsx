@@ -23,7 +23,7 @@ const ModalParticles = () => {
       {[...Array(8)].map((_, i) => ( // Reduced for mobile performance
         <motion.div
           key={`modal-particle-${i}`}
-          className="absolute w-1 h-1 bg-cyan-400 rounded-full opacity-40"
+          className="absolute w-1 h-1 bg-teal-300 rounded-full opacity-40"
           initial={{
             x: Math.random() * 100 + "%",
             y: Math.random() * 100 + "%",
@@ -107,7 +107,7 @@ export default function AppointmentModal({ open, onClose }: AppointmentModalProp
             className="relative w-full max-w-lg max-h-[90vh] overflow-hidden rounded-2xl"
             style={{
               background: `linear-gradient(135deg, 
-                #08445c 30%, 
+                #08445c 0%, 
                 rgb(18,98,92) 30%,
                 #08445c 70%,
                 #08445c 100%
@@ -115,32 +115,23 @@ export default function AppointmentModal({ open, onClose }: AppointmentModalProp
             }}
           >
             {/* Backdrop blur overlay */}
-            <div className="absolute inset-0 backdrop-blur-xl bg-gradient-to-br from-slate-800/20 via-purple-900/30 to-slate-900/20" />
+            <div className="absolute inset-0 backdrop-blur-xl bg-gradient-to-br from-slate-800/20 via-teal-900/30 to-slate-900/20" />
             
             {/* Animated border */}
             <div className="absolute inset-0 rounded-2xl">
-              <div className="absolute inset-0 rounded-2xl border-2 border-cyan-500/30 shadow-2xl shadow-cyan-500/20" />
+              <div className="absolute inset-0 rounded-2xl border-2 border-teal-400/30 shadow-2xl shadow-teal-400/20" />
               <motion.div
                 className="absolute inset-0 rounded-2xl border-2 border-transparent"
                 style={{
                   background: `linear-gradient(45deg, 
                     transparent, 
-                    rgba(6, 182, 212, 0.3), 
-                    rgba(168, 85, 247, 0.3), 
-                    rgba(236, 72, 153, 0.3),
+                    rgba(20, 184, 166, 0.3), 
+                    rgba(94, 234, 212, 0.3), 
+                    rgba(255, 255, 255, 0.3),
                     transparent
                   ) border-box`,
                   mask: 'linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0)',
                   maskComposite: 'xor'
-                }}
-                animate={{
-                  background: [
-                    'linear-gradient(0deg, transparent, rgba(6, 182, 212, 0.3), rgba(168, 85, 247, 0.3), rgba(236, 72, 153, 0.3), transparent)',
-                    'linear-gradient(90deg, transparent, rgba(6, 182, 212, 0.3), rgba(168, 85, 247, 0.3), rgba(236, 72, 153, 0.3), transparent)',
-                    'linear-gradient(180deg, transparent, rgba(6, 182, 212, 0.3), rgba(168, 85, 247, 0.3), rgba(236, 72, 153, 0.3), transparent)',
-                    'linear-gradient(270deg, transparent, rgba(6, 182, 212, 0.3), rgba(168, 85, 247, 0.3), rgba(236, 72, 153, 0.3), transparent)',
-                    'linear-gradient(360deg, transparent, rgba(6, 182, 212, 0.3), rgba(168, 85, 247, 0.3), rgba(236, 72, 153, 0.3), transparent)'
-                  ]
                 }}
                 transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
               />
@@ -160,7 +151,7 @@ export default function AppointmentModal({ open, onClose }: AppointmentModalProp
                   whileHover={{ scale: 1.1, rotate: 90 }}
                   whileTap={{ scale: 0.9 }}
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-pink-500/20 rounded-lg opacity-0 group-hover:opacity-100 transition duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-teal-500/20 to-white/20 rounded-lg opacity-0 group-hover:opacity-100 transition duration-300" />
                   <FiX className="relative z-10 text-xl" />
                 </motion.button>
 
@@ -175,7 +166,7 @@ export default function AppointmentModal({ open, onClose }: AppointmentModalProp
                       initial={{ scale: 0 }}
                       animate={{ scale: 1 }}
                       transition={{ delay: 0.2, type: "spring", stiffness: 500 }}
-                      className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-pink-500 to-cyan-400 rounded-full mb-6"
+                      className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-teal-500 to-teal-300 rounded-full mb-6"
                     >
                       <FiCheck className="text-white text-2xl" />
                     </motion.div>
@@ -184,7 +175,7 @@ export default function AppointmentModal({ open, onClose }: AppointmentModalProp
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{ delay: 0.4 }}
-                      className="text-2xl font-bold text-transparent bg-gradient-to-r from-cyan-400 via-pink-400 to-purple-400 bg-clip-text mb-3"
+                      className="text-2xl font-bold text-transparent bg-gradient-to-r from-teal-300 via-white to-teal-200 bg-clip-text mb-3"
                     >
                       Thank You!
                     </motion.h3>
@@ -197,7 +188,7 @@ export default function AppointmentModal({ open, onClose }: AppointmentModalProp
                     >
                       Your appointment request has been received.
                       <br />
-                      <span className="text-cyan-400">We'll contact you soon!</span>
+                      <span className="text-teal-300">We'll contact you soon!</span>
                     </motion.p>
                   </motion.div>
                 ) : (
@@ -217,7 +208,7 @@ export default function AppointmentModal({ open, onClose }: AppointmentModalProp
                       <motion.h3
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="text-lg sm:text-3xl font-black text-transparent bg-gradient-to-r from-cyan-400 via-pink-400 to-purple-400 bg-clip-text mb-2"
+                        className="text-lg sm:text-3xl font-black text-transparent bg-gradient-to-r from-teal-300 via-white to-teal-200 bg-clip-text mb-2"
                       >
                         Book Appointment
                       </motion.h3>
@@ -240,9 +231,9 @@ export default function AppointmentModal({ open, onClose }: AppointmentModalProp
                         transition={{ delay: 0.1 }}
                         className="relative group"
                       >
-                        <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 via-purple-500/20 to-pink-500/20 rounded-xl opacity-0 group-focus-within:opacity-100 transition duration-300 blur-sm" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-teal-500/20 via-teal-300/20 to-white/20 rounded-xl opacity-0 group-focus-within:opacity-100 transition duration-300 blur-sm" />
                         <div className="relative flex items-center">
-                          <FiUser className="absolute left-4 text-cyan-400 z-10" />
+                          <FiUser className="absolute left-4 text-teal-300 z-10" />
                           <input
                             type="text"
                             name="name"
@@ -250,7 +241,7 @@ export default function AppointmentModal({ open, onClose }: AppointmentModalProp
                             value={form.name}
                             onChange={handleChange}
                             required
-                            className="w-full pl-12 pr-4 py-3 bg-slate-800/50 border border-cyan-500/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-pink-400 focus:ring-2 focus:ring-pink-400/20 transition-all backdrop-blur-sm text-sm sm:text-base"
+                            className="w-full pl-12 pr-4 py-3 bg-slate-800/50 border border-teal-400/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-teal-300 focus:ring-2 focus:ring-teal-300/20 transition-all backdrop-blur-sm text-sm sm:text-base"
                           />
                         </div>
                       </motion.div>
@@ -262,9 +253,9 @@ export default function AppointmentModal({ open, onClose }: AppointmentModalProp
                         transition={{ delay: 0.2 }}
                         className="relative group"
                       >
-                        <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 via-purple-500/20 to-pink-500/20 rounded-xl opacity-0 group-focus-within:opacity-100 transition duration-300 blur-sm" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-teal-500/20 via-teal-300/20 to-white/20 rounded-xl opacity-0 group-focus-within:opacity-100 transition duration-300 blur-sm" />
                         <div className="relative flex items-center">
-                          <FiPhone className="absolute left-4 text-cyan-400 z-10" />
+                          <FiPhone className="absolute left-4 text-teal-300 z-10" />
                           <input
                             type="tel"
                             name="phone"
@@ -272,7 +263,7 @@ export default function AppointmentModal({ open, onClose }: AppointmentModalProp
                             value={form.phone}
                             onChange={handleChange}
                             required
-                            className="w-full pl-12 pr-4 py-3 bg-slate-800/50 border border-cyan-500/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-pink-400 focus:ring-2 focus:ring-pink-400/20 transition-all backdrop-blur-sm text-sm sm:text-base"
+                            className="w-full pl-12 pr-4 py-3 bg-slate-800/50 border border-teal-400/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-teal-300 focus:ring-2 focus:ring-teal-300/20 transition-all backdrop-blur-sm text-sm sm:text-base"
                           />
                         </div>
                       </motion.div>
@@ -284,9 +275,9 @@ export default function AppointmentModal({ open, onClose }: AppointmentModalProp
                         transition={{ delay: 0.3 }}
                         className="relative group"
                       >
-                        <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 via-purple-500/20 to-pink-500/20 rounded-xl opacity-0 group-focus-within:opacity-100 transition duration-300 blur-sm" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-teal-500/20 via-teal-300/20 to-white/20 rounded-xl opacity-0 group-focus-within:opacity-100 transition duration-300 blur-sm" />
                         <div className="relative flex items-center">
-                          <FiMail className="absolute left-4 text-cyan-400 z-10" />
+                          <FiMail className="absolute left-4 text-teal-300 z-10" />
                           <input
                             type="email"
                             name="email"
@@ -294,7 +285,7 @@ export default function AppointmentModal({ open, onClose }: AppointmentModalProp
                             value={form.email}
                             onChange={handleChange}
                             required
-                            className="w-full pl-12 pr-4 py-3 bg-slate-800/50 border border-cyan-500/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-pink-400 focus:ring-2 focus:ring-pink-400/20 transition-all backdrop-blur-sm text-sm sm:text-base"
+                            className="w-full pl-12 pr-4 py-3 bg-slate-800/50 border border-teal-400/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-teal-300 focus:ring-2 focus:ring-teal-300/20 transition-all backdrop-blur-sm text-sm sm:text-base"
                           />
                         </div>
                       </motion.div>
@@ -306,16 +297,16 @@ export default function AppointmentModal({ open, onClose }: AppointmentModalProp
                         transition={{ delay: 0.4 }}
                         className="relative group"
                       >
-                        <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 via-purple-500/20 to-pink-500/20 rounded-xl opacity-0 group-focus-within:opacity-100 transition duration-300 blur-sm" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-teal-500/20 via-teal-300/20 to-white/20 rounded-xl opacity-0 group-focus-within:opacity-100 transition duration-300 blur-sm" />
                         <div className="relative flex items-start">
-                          <FiMessageSquare className="absolute left-4 top-4 text-cyan-400 z-10" />
+                          <FiMessageSquare className="absolute left-4 top-4 text-teal-300 z-10" />
                           <textarea
                             name="message"
                             placeholder="Additional message (optional)"
                             value={form.message}
                             onChange={handleChange}
                             rows={3}
-                            className="w-full pl-12 pr-4 py-3 bg-slate-800/50 border border-cyan-500/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-pink-400 focus:ring-2 focus:ring-pink-400/20 transition-all backdrop-blur-sm resize-none text-sm sm:text-base"
+                            className="w-full pl-12 pr-4 py-3 bg-slate-800/50 border border-teal-400/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-teal-300 focus:ring-2 focus:ring-teal-300/20 transition-all backdrop-blur-sm resize-none text-sm sm:text-base"
                           />
                         </div>
                       </motion.div>
@@ -327,7 +318,7 @@ export default function AppointmentModal({ open, onClose }: AppointmentModalProp
                       disabled={sending}
                       className="relative w-full mt-6 sm:mt-8 px-8 py-3 sm:py-4 text-base sm:text-lg font-bold text-white rounded-xl overflow-hidden group disabled:opacity-50 disabled:cursor-not-allowed"
                       style={{
-                        background: 'linear-gradient(135deg, #ec4899 0%, #8b5cf6 50%, #06b6d4 100%)'
+                        background: 'linear-gradient(135deg, #0f766e 0%, #14b8a6 50%, #5eead4 100%)'
                       }}
                       whileHover={{ scale: sending ? 1 : 1.02 }}
                       whileTap={{ scale: sending ? 1 : 0.98 }}
@@ -336,7 +327,7 @@ export default function AppointmentModal({ open, onClose }: AppointmentModalProp
                       transition={{ delay: 0.5 }}
                     >
                       {/* Button glow effect */}
-                      <div className="absolute inset-0 bg-gradient-to-r from-pink-400/20 via-purple-400/20 to-cyan-400/20 opacity-0 group-hover:opacity-100 transition duration-300" />
+                      <div className="absolute inset-0 bg-gradient-to-r from-teal-400/20 via-teal-300/20 to-white/20 opacity-0 group-hover:opacity-100 transition duration-300" />
                       
                       {/* Button content */}
                       <span className="relative z-10 flex items-center justify-center gap-2">

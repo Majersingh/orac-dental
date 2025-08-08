@@ -50,7 +50,7 @@ const WhyUsParticles = () => {
       {[...Array(15)].map((_, i) => (
         <motion.div
           key={`whyus-particle-${i}`}
-          className="absolute w-1 h-1 bg-cyan-400 rounded-full opacity-30"
+          className="absolute w-1 h-1 bg-teal-300 rounded-full opacity-30"
           initial={{
             x: Math.random() * 100 + "%",
             y: Math.random() * 100 + "%",
@@ -78,15 +78,15 @@ export default function WhyUsSection() {
       className="relative py-20 px-4 overflow-hidden"
       style={{
         background: `linear-gradient(135deg, 
-          #08445c 0%, 
-          rgb(18,98,92) 30%,
-          #08445c 70%,
-          #08445c 100%
+           #08445c 0%, 
+            rgb(18,98,92) 30%,
+            #08445c 70%,
+            #08445c 100%
         )`
       }}
     >
       {/* Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900/50 via-purple-900/30 to-slate-900/50" />
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900/50 via-teal-900/30 to-slate-900/50" />
       
       {/* Floating Particles */}
       <WhyUsParticles />
@@ -97,9 +97,9 @@ export default function WhyUsSection() {
           className="absolute inset-0" 
           style={{
             backgroundImage: `
-              radial-gradient(circle at 25% 25%, rgba(6, 182, 212, 0.3) 0%, transparent 50%),
-              radial-gradient(circle at 75% 75%, rgba(168, 85, 247, 0.3) 0%, transparent 50%),
-              radial-gradient(circle at 50% 50%, rgba(236, 72, 153, 0.3) 0%, transparent 50%)
+              radial-gradient(circle at 25% 25%, rgba(20, 184, 166, 0.3) 0%, transparent 50%),
+              radial-gradient(circle at 75% 75%, rgba(94, 234, 212, 0.3) 0%, transparent 50%),
+              radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.3) 0%, transparent 50%)
             `,
           }} 
         />
@@ -108,7 +108,7 @@ export default function WhyUsSection() {
       {/* Animated Border */}
       <div className="absolute inset-0">
         <motion.div
-          className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-500 to-transparent"
+          className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-teal-400 to-transparent"
           animate={{
             x: ['-100%', '100%'],
           }}
@@ -130,7 +130,7 @@ export default function WhyUsSection() {
             transition={{ duration: 0.6 }}
             className="inline-block mb-6"
           >
-            <span className="px-6 py-3 bg-gradient-to-r from-cyan-500/20 via-purple-500/20 to-pink-500/20 rounded-full text-cyan-400 text-sm font-semibold border border-cyan-500/30 backdrop-blur-sm">
+            <span className="px-6 py-3 bg-gradient-to-r from-teal-500/20 via-teal-300/20 to-white/20 rounded-full text-teal-300 text-sm font-semibold border border-teal-400/30 backdrop-blur-sm">
               Why Choose Us
             </span>
           </motion.div>
@@ -142,7 +142,7 @@ export default function WhyUsSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight mb-4"
           >
-            <span className="text-transparent bg-gradient-to-r from-cyan-400 via-pink-400 to-purple-400 bg-clip-text">
+            <span className="text-transparent bg-gradient-to-r from-teal-300 via-white to-teal-200 bg-clip-text">
               Why Trust{" "}
             </span>
             <span className="text-white">
@@ -158,7 +158,7 @@ export default function WhyUsSection() {
             className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
           >
             Experience excellence in dental care with our{" "}
-            <span className="text-transparent bg-gradient-to-r from-cyan-400 to-pink-400 bg-clip-text font-semibold">
+            <span className="text-transparent bg-gradient-to-r from-teal-300 to-white bg-clip-text font-semibold">
               world-class standards
             </span>{" "}
             and cutting-edge technology
@@ -193,21 +193,21 @@ export default function WhyUsSection() {
               className="group relative"
             >
               {/* Card Container */}
-              <div className="relative h-full rounded-2xl overflow-hidden backdrop-blur-xl border border-cyan-500/30 group-hover:border-pink-400/50 transition-all duration-300">
+              <div className="relative h-full rounded-2xl overflow-hidden backdrop-blur-xl border border-teal-400/30 group-hover:border-teal-300/50 transition-all duration-300">
                 {/* Background Gradient */}
                 <div 
                   className="absolute inset-0"
                   style={{
                     background: `linear-gradient(135deg, 
-                      #08445c 0%, 
-                      rgb(18,88,92) 50%,
-                      #08445c 100%
+                      #0f766e 0%, 
+                      #134e4a 50%,
+                      #0f766e 100%
                     )`
                   }}
                 />
                 
                 {/* Hover Glow Effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-purple-500/10 to-pink-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm" />
+                <div className="absolute inset-0 bg-gradient-to-r from-teal-500/10 via-teal-300/10 to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm" />
                 
                 {/* Content */}
                 <div className="relative z-10 p-8">
@@ -215,7 +215,7 @@ export default function WhyUsSection() {
                   <div className="flex items-center gap-4 mb-6">
                     {/* Icon */}
                     <motion.div
-                      className="w-14 h-14 bg-gradient-to-r from-cyan-500/20 to-pink-500/20 rounded-xl backdrop-blur-sm border border-cyan-500/30 flex items-center justify-center text-2xl group-hover:bg-gradient-to-r group-hover:from-cyan-500/30 group-hover:to-pink-500/30 transition-all duration-300"
+                      className="w-14 h-14 bg-gradient-to-r from-teal-500/20 to-white/20 rounded-xl backdrop-blur-sm border border-teal-400/30 flex items-center justify-center text-2xl group-hover:bg-gradient-to-r group-hover:from-teal-500/30 group-hover:to-white/30 transition-all duration-300"
                       whileHover={{ rotate: 360, scale: 1.1 }}
                       transition={{ duration: 0.5 }}
                     >
@@ -224,13 +224,13 @@ export default function WhyUsSection() {
                     
                     {/* Title */}
                     <div>
-                      <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-cyan-400 group-hover:to-pink-400 group-hover:bg-clip-text transition-all duration-300">
+                      <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-teal-300 group-hover:to-white group-hover:bg-clip-text transition-all duration-300">
                         {group.title}
                       </h3>
                       
                       {/* Animated Underline */}
                       <motion.div
-                        className="h-0.5 bg-gradient-to-r from-cyan-500 to-pink-500 rounded-full mt-2"
+                        className="h-0.5 bg-gradient-to-r from-teal-400 to-white rounded-full mt-2"
                         initial={{ width: 0 }}
                         whileInView={{ width: "100%" }}
                         viewport={{ once: true }}
@@ -258,7 +258,7 @@ export default function WhyUsSection() {
                           className="flex-shrink-0 mt-2"
                           whileHover={{ scale: 1.2 }}
                         >
-                          <div className="w-2 h-2 bg-gradient-to-r from-cyan-400 to-pink-400 rounded-full group-hover/item:shadow-lg group-hover/item:shadow-cyan-400/50 transition-all duration-300" />
+                          <div className="w-2 h-2 bg-gradient-to-r from-teal-300 to-white rounded-full group-hover/item:shadow-lg group-hover/item:shadow-teal-300/50 transition-all duration-300" />
                         </motion.div>
                         
                         {/* Item Text */}
@@ -275,7 +275,7 @@ export default function WhyUsSection() {
                   {[...Array(6)].map((_, particleIdx) => (
                     <motion.div
                       key={particleIdx}
-                      className="absolute w-1 h-1 bg-cyan-400 rounded-full"
+                      className="absolute w-1 h-1 bg-teal-300 rounded-full"
                       style={{
                         left: `${15 + particleIdx * 15}%`,
                         top: `${20 + particleIdx * 12}%`,
@@ -326,7 +326,7 @@ export default function WhyUsSection() {
                 }}
                 className="group"
               >
-                <div className="text-3xl sm:text-4xl font-black text-transparent bg-gradient-to-r from-cyan-400 via-pink-400 to-purple-400 bg-clip-text mb-2 group-hover:scale-110 transition-transform duration-300">
+                <div className="text-3xl sm:text-4xl font-black text-transparent bg-gradient-to-r from-teal-300 via-white to-teal-200 bg-clip-text mb-2 group-hover:scale-110 transition-transform duration-300">
                   {stat.number}
                 </div>
                 <div className="text-gray-400 text-sm sm:text-base font-medium">

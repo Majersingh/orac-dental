@@ -48,7 +48,7 @@ const TestimonialParticles = () => {
       {[...Array(10)].map((_, i) => (
         <motion.div
           key={`testimonial-particle-${i}`}
-          className="absolute w-1 h-1 bg-cyan-400 rounded-full opacity-30"
+          className="absolute w-1 h-1 bg-teal-300 rounded-full opacity-30"
           initial={{
             x: Math.random() * 100 + "%",
             y: Math.random() * 100 + "%",
@@ -109,7 +109,7 @@ export default function TestimonialsSection() {
       }}
     >
       {/* Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900/50 via-purple-900/30 to-slate-900/50" />
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900/50 via-teal-900/30 to-slate-900/50" />
       
       {/* Floating Particles */}
       <TestimonialParticles />
@@ -120,9 +120,9 @@ export default function TestimonialsSection() {
           className="absolute inset-0" 
           style={{
             backgroundImage: `
-              radial-gradient(circle at 20% 80%, rgba(6, 182, 212, 0.3) 0%, transparent 50%),
-              radial-gradient(circle at 80% 20%, rgba(168, 85, 247, 0.3) 0%, transparent 50%),
-              radial-gradient(circle at 40% 40%, rgba(236, 72, 153, 0.3) 0%, transparent 50%)
+              radial-gradient(circle at 20% 80%, rgba(20, 184, 166, 0.3) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(94, 234, 212, 0.3) 0%, transparent 50%),
+              radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.3) 0%, transparent 50%)
             `,
           }} 
         />
@@ -131,7 +131,7 @@ export default function TestimonialsSection() {
       {/* Animated Border */}
       <div className="absolute inset-0">
         <motion.div
-          className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-500 to-transparent"
+          className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-teal-400 to-transparent"
           animate={{
             x: ['-100%', '100%'],
           }}
@@ -153,7 +153,7 @@ export default function TestimonialsSection() {
             transition={{ duration: 0.6 }}
             className="inline-block mb-6"
           >
-            <span className="px-6 py-3 bg-gradient-to-r from-cyan-500/20 via-purple-500/20 to-pink-500/20 rounded-full text-cyan-400 text-sm font-semibold border border-cyan-500/30 backdrop-blur-sm">
+            <span className="px-6 py-3 bg-gradient-to-r from-teal-500/20 via-teal-300/20 to-white/20 rounded-full text-teal-300 text-sm font-semibold border border-teal-400/30 backdrop-blur-sm">
               Patient Reviews
             </span>
           </motion.div>
@@ -163,7 +163,7 @@ export default function TestimonialsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-black text-transparent bg-gradient-to-r from-cyan-400 via-pink-400 to-purple-400 bg-clip-text mb-6"
+            className="text-4xl sm:text-5xl lg:text-6xl font-black text-transparent bg-gradient-to-r from-teal-300 via-white to-teal-200 bg-clip-text mb-6"
           >
             Patient Testimonials
           </motion.h2>
@@ -176,7 +176,7 @@ export default function TestimonialsSection() {
             className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
           >
             Discover what our patients say about their{" "}
-            <span className="text-transparent bg-gradient-to-r from-cyan-400 to-pink-400 bg-clip-text font-semibold">
+            <span className="text-transparent bg-gradient-to-r from-teal-300 to-white bg-clip-text font-semibold">
               transformative dental experiences
             </span>{" "}
             with cutting-edge technology
@@ -191,13 +191,13 @@ export default function TestimonialsSection() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="max-w-4xl mx-auto"
         >
-          <div className="relative rounded-2xl overflow-hidden backdrop-blur-xl border border-cyan-500/30 bg-gradient-to-br from-slate-900/50 via-purple-900/30 to-slate-900/50">
+          <div className="relative rounded-2xl overflow-hidden backdrop-blur-xl border border-teal-400/30 bg-gradient-to-br from-slate-900/50 via-teal-900/30 to-slate-900/50">
             {/* Carousel Container */}
             <div className="relative">
               {/* Custom Carousel Styling */}
               <style jsx global>{`
                 .carousel .control-arrow {
-                  background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 50%, #06b6d4 100%) !important;
+                  background: linear-gradient(135deg, #0f766e 0%, #14b8a6 50%, #5eead4 100%) !important;
                   border-radius: 50% !important;
                   width: 50px !important;
                   height: 50px !important;
@@ -221,7 +221,7 @@ export default function TestimonialsSection() {
                   padding: 20px 0 !important;
                 }
                 .carousel .control-dots .dot {
-                  background: linear-gradient(135deg, #06b6d4, #ec4899) !important;
+                  background: linear-gradient(135deg, #14b8a6, #ffffff) !important;
                   width: 12px !important;
                   height: 12px !important;
                   border-radius: 50% !important;
@@ -256,7 +256,7 @@ export default function TestimonialsSection() {
                   >
                     {/* Quote Icon */}
                     <motion.div
-                      className="absolute top-8 left-8 text-6xl text-cyan-400/20"
+                      className="absolute top-8 left-8 text-6xl text-teal-300/20"
                       initial={{ opacity: 0, scale: 0 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ delay: 0.3, duration: 0.5 }}
@@ -270,7 +270,7 @@ export default function TestimonialsSection() {
                       whileHover={{ scale: 1.1 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <div className="w-20 h-20 mx-auto rounded-full overflow-hidden border-4 border-gradient-to-r from-cyan-400 to-pink-400 p-1 bg-gradient-to-r from-cyan-400 to-pink-400">
+                      <div className="w-20 h-20 mx-auto rounded-full overflow-hidden border-4 border-gradient-to-r from-teal-300 to-white p-1 bg-gradient-to-r from-teal-300 to-white">
                         <div className="w-full h-full rounded-full overflow-hidden bg-slate-800">
                           <img
                             src={testimonial.image}
@@ -282,7 +282,7 @@ export default function TestimonialsSection() {
                       
                       {/* Floating badge */}
                       <motion.div
-                        className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-r from-green-400 to-cyan-400 rounded-full flex items-center justify-center text-white text-xs"
+                        className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-r from-teal-400 to-teal-300 rounded-full flex items-center justify-center text-white text-xs"
                         animate={{ rotate: 360 }}
                         transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                       >
@@ -310,17 +310,17 @@ export default function TestimonialsSection() {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.7, duration: 0.6 }}
                     >
-                      <div className="text-xl font-bold text-transparent bg-gradient-to-r from-cyan-400 to-pink-400 bg-clip-text">
+                      <div className="text-xl font-bold text-transparent bg-gradient-to-r from-teal-300 to-white bg-clip-text">
                         {testimonial.name}
                       </div>
                       
-                      <div className="inline-block px-4 py-2 bg-gradient-to-r from-cyan-500/20 to-pink-500/20 rounded-full text-sm text-cyan-300 border border-cyan-500/30">
+                      <div className="inline-block px-4 py-2 bg-gradient-to-r from-teal-500/20 to-white/20 rounded-full text-sm text-teal-300 border border-teal-400/30">
                         {testimonial.treatment}
                       </div>
                     </motion.div>
 
                     {/* Decorative Elements */}
-                    <div className="absolute bottom-8 right-8 text-6xl text-cyan-400/20 rotate-180">
+                    <div className="absolute bottom-8 right-8 text-6xl text-teal-300/20 rotate-180">
                       "
                     </div>
 
@@ -329,7 +329,7 @@ export default function TestimonialsSection() {
                       {[...Array(3)].map((_, particleIdx) => (
                         <motion.div
                           key={particleIdx}
-                          className="absolute w-2 h-2 bg-pink-400 rounded-full opacity-40"
+                          className="absolute w-2 h-2 bg-white rounded-full opacity-40"
                           style={{
                             left: `${20 + particleIdx * 30}%`,
                             top: `${30 + particleIdx * 20}%`,
@@ -379,10 +379,10 @@ export default function TestimonialsSection() {
                   type: "spring",
                   stiffness: 200
                 }}
-                className="group p-6 rounded-xl backdrop-blur-sm border border-cyan-500/20 hover:border-pink-400/40 transition-all duration-300"
+                className="group p-6 rounded-xl backdrop-blur-sm border border-teal-400/20 hover:border-teal-300/40 transition-all duration-300"
                 whileHover={{ scale: 1.05 }}
               >
-                <div className="text-3xl sm:text-4xl font-black text-transparent bg-gradient-to-r from-cyan-400 via-pink-400 to-purple-400 bg-clip-text mb-2 group-hover:scale-110 transition-transform duration-300">
+                <div className="text-3xl sm:text-4xl font-black text-transparent bg-gradient-to-r from-teal-300 via-white to-teal-200 bg-clip-text mb-2 group-hover:scale-110 transition-transform duration-300">
                   {stat.number}
                 </div>
                 <div className="text-gray-400 text-sm sm:text-base font-medium">

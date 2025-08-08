@@ -62,7 +62,7 @@ const FloatingParticles = ({ isMobile, shouldReduceMotion }: FloatingParticles) 
       {particles.map((particle) => (
         <motion.div
           key={particle.id}
-          className="absolute w-1 h-1 bg-cyan-400 rounded-full opacity-40"
+          className="absolute w-1 h-1 bg-teal-300 rounded-full opacity-40"
           style={{
             left: `${particle.initialX}%`,
             top: `${particle.initialY}%`,
@@ -101,9 +101,9 @@ const HolographicElements = ({ isMobile, shouldReduceMotion }:FloatingParticles)
             repeat: Infinity,
             ease: "linear"
           }}
-          className="w-full h-full bg-gradient-to-br from-cyan-400/30 to-purple-600/30 rounded-lg backdrop-blur-sm border border-cyan-400/20"
+          className="w-full h-full bg-gradient-to-br from-teal-300/30 to-teal-600/30 rounded-lg backdrop-blur-sm border border-teal-300/20"
           style={{
-            boxShadow: '0 0 15px rgba(6, 182, 212, 0.2)'
+            boxShadow: '0 0 15px rgba(20, 184, 166, 0.2)'
           }}
         />
       </div>
@@ -119,9 +119,9 @@ const HolographicElements = ({ isMobile, shouldReduceMotion }:FloatingParticles)
             repeat: Infinity,
             ease: "easeInOut"
           }}
-          className="w-full h-full bg-gradient-to-tr from-pink-400/30 to-cyan-600/30 rounded-full backdrop-blur-sm border border-pink-400/20"
+          className="w-full h-full bg-gradient-to-tr from-white/30 to-teal-400/30 rounded-full backdrop-blur-sm border border-white/20"
           style={{
-            boxShadow: '0 0 10px rgba(236, 72, 153, 0.3)'
+            boxShadow: '0 0 10px rgba(255, 255, 255, 0.3)'
           }}
         />
       </div>
@@ -199,7 +199,7 @@ export default function HeroSection({ onBook }: HeroSectionProps) {
   const buttonVariants = useMemo(() => ({
     hover: shouldReduceMotion ? {} : { 
       scale: 1.02,
-      boxShadow: '0 0 25px rgba(6, 182, 212, 0.4)'
+      boxShadow: '0 0 25px rgba(20, 184, 166, 0.4)'
     },
     tap: { scale: 0.98 }
   }), [shouldReduceMotion]);
@@ -213,7 +213,7 @@ export default function HeroSection({ onBook }: HeroSectionProps) {
   // Loading skeleton
   if (!isLoaded) {
     return (
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-[#08445c] to-slate-900">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-teal-700 to-slate-900">
         <div className="relative z-20 flex flex-col items-center justify-center text-center px-4 w-full max-w-7xl mx-auto">
           <div className="w-full max-w-4xl h-32 bg-gradient-to-r from-slate-800/50 to-slate-700/50 rounded-3xl animate-pulse mb-8" />
           <div className="w-64 h-12 bg-gradient-to-r from-slate-800/50 to-slate-700/50 rounded-2xl animate-pulse mb-8" />
@@ -228,7 +228,7 @@ export default function HeroSection({ onBook }: HeroSectionProps) {
   }
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-[#08445c] to-slate-900 px-4 sm:px-6 lg:px-8">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-teal-700 to-slate-900 px-4 sm:px-6 lg:px-8">
       {/* Optimized Background Images */}
       <div className="absolute inset-0 w-full h-full">
         <AnimatePresence mode="wait">
@@ -257,30 +257,30 @@ export default function HeroSection({ onBook }: HeroSectionProps) {
       </div>
 
       {/* Simplified Overlays */}
-      <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/15 via-[#08445c] to-pink-500/15" />
+      <div className="absolute inset-0 bg-gradient-to-br from-teal-400/15 via-teal-700 to-white/15" />
       <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/30" />
 
       {/* Floating Particles */}
-      <FloatingParticles isMobile={isMobile} shouldReduceMotion={shouldReduceMotion} />
+      {/* <FloatingParticles isMobile={isMobile} shouldReduceMotion={shouldReduceMotion} /> */}
 
       {/* Simplified Grid Pattern - only on desktop */}
-      {!isMobile && !shouldReduceMotion && (
+      {/* {!isMobile && !shouldReduceMotion && (
         <div className="absolute inset-0 opacity-5">
           <div 
             className="w-full h-full"
             style={{
               backgroundImage: `
-                linear-gradient(90deg, transparent 0%, rgba(6, 182, 212, 0.1) 50%, transparent 100%),
-                linear-gradient(0deg, transparent 0%, rgba(6, 182, 212, 0.1) 50%, transparent 100%)
+                linear-gradient(90deg, transparent 0%, rgba(20, 184, 166, 0.1) 50%, transparent 100%),
+                linear-gradient(0deg, transparent 0%, rgba(20, 184, 166, 0.1) 50%, transparent 100%)
               `,
               backgroundSize: '100px 100px'
             }}
           />
         </div>
-      )}
+      )} */}
 
       {/* 3D Holographic Elements */}
-      <HolographicElements isMobile={isMobile} shouldReduceMotion={shouldReduceMotion} />
+      {/* <HolographicElements isMobile={isMobile} shouldReduceMotion={shouldReduceMotion} /> */}
 
       {/* Main Content */}
       <div className="relative z-20 flex flex-col items-center justify-center text-center w-full max-w-7xl mx-auto">
@@ -292,22 +292,22 @@ export default function HeroSection({ onBook }: HeroSectionProps) {
           className="relative mb-6 sm:mb-8"
         >
           {/* Simplified text glow */}
-          <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 via-purple-500/5 to-pink-500/5 rounded-2xl sm:rounded-3xl blur-2xl" />
+          <div className="absolute inset-0 bg-gradient-to-r from-teal-400/5 via-teal-300/5 to-white/5 rounded-2xl sm:rounded-3xl blur-2xl" />
           
           <h1 
-            className="relative text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-black uppercase bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent leading-tight px-2"
+            className="relative text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-6xl font-black uppercase bg-gradient-to-r from-teal-300 via-white to-teal-200 bg-clip-text text-transparent leading-tight px-2"
             style={{
-              textShadow: shouldReduceMotion ? 'none' : '0 0 30px rgba(6, 182, 212, 0.3)',
-              filter: shouldReduceMotion ? 'none' : 'drop-shadow(0 0 10px rgba(6, 182, 212, 0.2))'
+              textShadow: shouldReduceMotion ? 'none' : '0 0 30px rgba(20, 184, 166, 0.3)',
+              filter: shouldReduceMotion ? 'none' : 'drop-shadow(0 0 10px rgba(20, 184, 166, 0.2))'
             }}
           >
-            FUTURE OF
+            EXPERIENCE PERSONALIZED 
             <br />
-            <span className="bg-gradient-to-r from-pink-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent">
-              DENTAL CARE
+            <span className="bg-gradient-to-r from-white via-teal-300 to-teal-200 bg-clip-text text-transparent">
+            DENTAL CARE WITH ORAC DENTAL
             </span>
             <br />
-            <span className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-semibold bg-gradient-to-r from-white via-cyan-200 to-white bg-clip-text text-transparent mt-2 sm:mt-4 block">
+            <span className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-semibold bg-gradient-to-r from-white via-teal-200 to-white bg-clip-text text-transparent mt-2 sm:mt-4 block">
               Affordable • Advanced • Amazing
             </span>
           </h1>
@@ -332,9 +332,9 @@ export default function HeroSection({ onBook }: HeroSectionProps) {
               <motion.div
                 key={feature}
                 whileHover={shouldReduceMotion ? {} : { scale: 1.02, y: -2 }}
-                className="px-3 sm:px-4 lg:px-6 py-2 sm:py-2.5 lg:py-3 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-full border border-cyan-400/30 backdrop-blur-sm text-white font-semibold text-xs sm:text-sm lg:text-base text-center"
+                className="px-3 sm:px-4 lg:px-6 py-2 sm:py-2.5 lg:py-3 bg-gradient-to-r from-teal-500/20 to-white/20 rounded-full border border-teal-300/30 backdrop-blur-sm text-white font-semibold text-xs sm:text-sm lg:text-base text-center"
                 style={{
-                  boxShadow: '0 0 10px rgba(6, 182, 212, 0.1)'
+                  boxShadow: '0 0 10px rgba(20, 184, 166, 0.1)'
                 }}
               >
                 <span className="whitespace-nowrap">{feature}</span>
@@ -343,7 +343,7 @@ export default function HeroSection({ onBook }: HeroSectionProps) {
           </motion.div>
           
           {/* Simplified button glow */}
-          <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500/40 via-purple-500/40 to-pink-500/40 rounded-xl sm:rounded-2xl blur opacity-60 group-hover:opacity-80 transition duration-300" />
+          <div className="absolute -inset-1 bg-gradient-to-r from-teal-400/40 via-teal-300/40 to-white/40 rounded-xl sm:rounded-2xl blur opacity-60 group-hover:opacity-80 transition duration-300" />
           
           <motion.button
             onClick={onBook}
@@ -351,10 +351,10 @@ export default function HeroSection({ onBook }: HeroSectionProps) {
             whileHover="hover"
             whileTap="tap"
             transition={{ type: 'spring', stiffness: 400, damping: 25 }}
-            className="relative px-6 sm:px-8 lg:px-12 py-3 sm:py-4 lg:py-6 text-sm sm:text-base lg:text-xl font-bold text-white bg-gradient-to-r from-cyan-600 via-purple-600 to-pink-600 rounded-xl sm:rounded-2xl border border-cyan-400/30 backdrop-blur-sm overflow-hidden w-full max-w-xs sm:max-w-sm lg:max-w-md"
+            className="relative px-6 sm:px-8 lg:px-12 py-3 sm:py-4 lg:py-6 text-sm sm:text-base lg:text-xl font-bold text-white bg-gradient-to-r from-teal-600 via-teal-500 to-teal-400 rounded-xl sm:rounded-2xl border border-teal-300/30 backdrop-blur-sm overflow-hidden w-full max-w-xs sm:max-w-sm lg:max-w-md"
             style={{
-              background: 'linear-gradient(135deg, rgba(6, 182, 212, 0.8), rgba(147, 51, 234, 0.8), rgba(26, 72, 153, 0.8))',
-              boxShadow: '0 0 20px rgba(6, 182, 212, 0.3)'
+              background: 'linear-gradient(135deg, rgba(15, 118, 110, 0.8), rgba(20, 184, 166, 0.8), rgba(94, 234, 212, 0.8))',
+              boxShadow: '0 0 20px rgba(20, 184, 166, 0.3)'
             }}
           >
             <span className="relative z-10 flex items-center justify-center gap-2 sm:gap-3">
@@ -368,10 +368,10 @@ export default function HeroSection({ onBook }: HeroSectionProps) {
 
       {/* Simplified Corner Accents */}
       <div className="absolute top-0 left-0 w-16 sm:w-24 lg:w-32 h-16 sm:h-24 lg:h-32">
-        <div className="w-full h-full bg-gradient-to-br from-cyan-500/20 to-transparent rounded-br-full" />
+        <div className="w-full h-full bg-gradient-to-br from-teal-400/20 to-transparent rounded-br-full" />
       </div>
       <div className="absolute bottom-0 right-0 w-16 sm:w-24 lg:w-32 h-16 sm:h-24 lg:h-32">
-        <div className="w-full h-full bg-gradient-to-tl from-pink-500/20 to-transparent rounded-tl-full" />
+        <div className="w-full h-full bg-gradient-to-tl from-white/20 to-transparent rounded-tl-full" />
       </div>
     </section>
   );

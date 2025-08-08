@@ -143,9 +143,9 @@ export default function Navbar() {
           transition={{ type: "spring", stiffness: 400, damping: 15 }}
         >
           <div className="absolute -inset-2 bg-gradient-to-r from-cyan-500/20 via-purple-500/20 to-pink-500/20 rounded-lg blur opacity-0 group-hover:opacity-100 transition duration-300" />
-          <span className="relative text-xl sm:text-2xl lg:text-3xl font-black text-transparent bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text tracking-wide">
+          <span className="relative text-xl sm:text-2xl lg:text-3xl font-black text-transparent bg-gradient-to-r from-cyan-400 via-teal-100 to-teal-400 bg-clip-text tracking-wide">
             ORAC 
-            <span className="text-white">Dental</span>
+            <span className="font-black text-transparent bg-gradient-to-r from-cyan-400 via-teal-300 to-teal-400 bg-clip-text mb-2">Dental</span>
           </span>
         </motion.a>
 
@@ -268,7 +268,7 @@ export default function Navbar() {
                 </motion.button>
 
                 {/* Navigation items */}
-                <nav className="p-6 bg-gradient-to-br from-slate-900 via-[#08445c] to-slate-900 " role="navigation">
+                <nav className="p-6 bg-gradient-to-br from-teal-900  to-teal-700 " role="navigation">
                   {navItems.map((item, index) => (
                     <motion.a
                       key={item.label}

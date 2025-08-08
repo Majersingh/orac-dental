@@ -14,7 +14,7 @@ const PopupParticles = () => {
       {[...Array(6)].map((_, i) => ( // Reduced for mobile performance
         <motion.div
           key={`popup-particle-${i}`}
-          className="absolute w-1 h-1 bg-cyan-400 rounded-full opacity-40"
+          className="absolute w-1 h-1 bg-teal-300 rounded-full opacity-40"
           initial={{
             x: Math.random() * 100 + "%",
             y: Math.random() * 100 + "%",
@@ -91,40 +91,31 @@ export default function TimedPopup({ onBook }: TimedPopupProps) {
             className="relative w-full max-w-md max-h-[85vh] overflow-hidden rounded-2xl"
             style={{
               background: `linear-gradient(135deg, 
-                #08445c 30%, 
-                rgb(18,98,92) 30%,
-                #08445c 70%,
-                #08445c 100%
+                 #08445c 0%, 
+                  rgb(18,98,92) 30%,
+                  #08445c 70%,
+                  #08445c 100%
               )`
             }}
           >
             {/* Backdrop blur overlay */}
-            <div className="absolute inset-0 backdrop-blur-xl bg-gradient-to-br from-slate-800/20 via-purple-900/30 to-slate-900/20" />
+            <div className="absolute inset-0 backdrop-blur-xl bg-gradient-to-br from-slate-800/20 via-teal-900/30 to-slate-900/20" />
             
             {/* Animated border */}
             <div className="absolute inset-0 rounded-2xl">
-              <div className="absolute inset-0 rounded-2xl border-2 border-cyan-500/30 shadow-2xl shadow-cyan-500/20" />
+              <div className="absolute inset-0 rounded-2xl border-2 border-teal-400/30 shadow-2xl shadow-teal-400/20" />
               <motion.div
                 className="absolute inset-0 rounded-2xl border-2 border-transparent"
                 style={{
                   background: `linear-gradient(45deg, 
                     transparent, 
-                    rgba(6, 182, 212, 0.3), 
-                    rgba(168, 85, 247, 0.3), 
-                    rgba(236, 72, 153, 0.3),
+                    rgba(20, 184, 166, 0.3), 
+                    rgba(94, 234, 212, 0.3), 
+                    rgba(255, 255, 255, 0.3),
                     transparent
                   ) border-box`,
                   mask: 'linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0)',
                   maskComposite: 'xor'
-                }}
-                animate={{
-                  background: [
-                    'linear-gradient(0deg, transparent, rgba(6, 182, 212, 0.3), rgba(168, 85, 247, 0.3), rgba(236, 72, 153, 0.3), transparent)',
-                    'linear-gradient(90deg, transparent, rgba(6, 182, 212, 0.3), rgba(168, 85, 247, 0.3), rgba(236, 72, 153, 0.3), transparent)',
-                    'linear-gradient(180deg, transparent, rgba(6, 182, 212, 0.3), rgba(168, 85, 247, 0.3), rgba(236, 72, 153, 0.3), transparent)',
-                    'linear-gradient(270deg, transparent, rgba(6, 182, 212, 0.3), rgba(168, 85, 247, 0.3), rgba(236, 72, 153, 0.3), transparent)',
-                    'linear-gradient(360deg, transparent, rgba(6, 182, 212, 0.3), rgba(168, 85, 247, 0.3), rgba(236, 72, 153, 0.3), transparent)'
-                  ]
                 }}
                 transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
               />
@@ -144,7 +135,7 @@ export default function TimedPopup({ onBook }: TimedPopupProps) {
                   whileHover={{ scale: 1.1, rotate: 90 }}
                   whileTap={{ scale: 0.9 }}
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-pink-500/20 rounded-lg opacity-0 group-hover:opacity-100 transition duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-teal-500/20 to-white/20 rounded-lg opacity-0 group-hover:opacity-100 transition duration-300" />
                   <FiX className="relative z-10 text-xl" />
                 </motion.button>
 
@@ -153,11 +144,11 @@ export default function TimedPopup({ onBook }: TimedPopupProps) {
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   transition={{ delay: 0.3, type: "spring", stiffness: 500 }}
-                  className="inline-flex items-center gap-2 px-3 py-2 bg-gradient-to-r from-pink-500/20 to-cyan-500/20 rounded-full text-cyan-400 text-xs sm:text-sm font-semibold border border-cyan-500/30 backdrop-blur-sm mb-4"
+                  className="inline-flex items-center gap-2 px-3 py-2 bg-gradient-to-r from-teal-500/20 to-white/20 rounded-full text-teal-300 text-xs sm:text-sm font-semibold border border-teal-400/30 backdrop-blur-sm mb-4"
                 >
                   <FiStar className="text-yellow-400" />
                   Limited Time Offer
-                  <FiZap className="text-pink-400" />
+                  <FiZap className="text-white" />
                 </motion.div>
 
                 {/* Main Heading */}
@@ -165,9 +156,9 @@ export default function TimedPopup({ onBook }: TimedPopupProps) {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.5, duration: 0.6 }}
-                  className="text-xl sm:text-2xl md:text-3xl font-black text-transparent bg-gradient-to-r from-cyan-400 via-pink-400 to-purple-400 bg-clip-text mb-4 leading-tight"
+                  className="text-xl sm:text-2xl md:text-3xl font-black text-transparent bg-gradient-to-r from-teal-300 via-white to-teal-200 bg-clip-text mb-4 leading-tight"
                 >
-                  Get Your Premium Dental Cleaning & AI Polishing Session
+                  Get Your Premium Dental Cleaning
                 </motion.h3>
 
                 {/* Price Section */}
@@ -180,7 +171,7 @@ export default function TimedPopup({ onBook }: TimedPopupProps) {
                   <div className="flex items-center justify-center gap-3 mb-2">
                     <span className="text-gray-400 text-lg sm:text-xl line-through">₹1,999</span>
                     <motion.span
-                      className="text-3xl sm:text-4xl font-black text-transparent bg-gradient-to-r from-pink-400 to-cyan-400 bg-clip-text"
+                      className="text-3xl sm:text-4xl font-black text-transparent bg-gradient-to-r from-white to-teal-300 bg-clip-text"
                       animate={{ scale: [1, 1.05, 1] }}
                       transition={{ duration: 2, repeat: Infinity }}
                     >
@@ -188,7 +179,7 @@ export default function TimedPopup({ onBook }: TimedPopupProps) {
                     </motion.span>
                   </div>
                   
-                  <div className="inline-block px-3 py-1 bg-gradient-to-r from-green-500/20 to-cyan-500/20 rounded-full text-green-400 text-xs sm:text-sm font-bold border border-green-500/30">
+                  <div className="inline-block px-3 py-1 bg-gradient-to-r from-green-500/20 to-teal-500/20 rounded-full text-green-400 text-xs sm:text-sm font-bold border border-green-500/30">
                     Save 75% Today!
                   </div>
                 </motion.div>
@@ -198,7 +189,7 @@ export default function TimedPopup({ onBook }: TimedPopupProps) {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.9, duration: 0.6 }}
-                  className="mb-4"
+                  className="mb-1"
                 >
                   <div className="grid grid-cols-1 gap-2 text-xs sm:text-sm">
                     {[
@@ -212,7 +203,7 @@ export default function TimedPopup({ onBook }: TimedPopupProps) {
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 1 + idx * 0.05 }}
-                        className="flex items-center justify-center gap-2 text-gray-300 py-1"
+                        className="flex items-center justify-center gap-2 text-gray-300 py-0.5"
                       >
                         <span className="text-base">{feature.icon}</span>
                         <span>{feature.text}</span>
@@ -226,7 +217,7 @@ export default function TimedPopup({ onBook }: TimedPopupProps) {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 1.2 }}
-                  className="flex items-center justify-center gap-2 mb-4 p-2 sm:p-3 bg-gradient-to-r from-red-500/20 to-orange-500/20 rounded-xl border border-red-500/30"
+                  className="flex items-center justify-center gap-2 mb-2 p-1 sm:p-2 bg-gradient-to-r from-red-500/20 to-orange-500/20 rounded-xl border border-red-500/30"
                 >
                   <FiClock className="text-red-400 text-sm" />
                   <span className="text-red-400 font-bold text-xs sm:text-sm">
@@ -239,7 +230,7 @@ export default function TimedPopup({ onBook }: TimedPopupProps) {
                   onClick={() => { setShow(false); onBook(); }}
                   className="relative w-full px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg font-bold text-white rounded-xl overflow-hidden group"
                   style={{
-                    background: 'linear-gradient(135deg, #ec4899 0%, #8b5cf6 50%, #06b6d4 100%)'
+                    background: 'linear-gradient(135deg, #0f766e 0%, #14b8a6 50%, #5eead4 100%)'
                   }}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
@@ -248,7 +239,7 @@ export default function TimedPopup({ onBook }: TimedPopupProps) {
                   transition={{ delay: 1.4 }}
                 >
                   {/* Button glow effect */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-pink-400/20 via-purple-400/20 to-cyan-400/20 opacity-0 group-hover:opacity-100 transition duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-teal-400/20 via-teal-300/20 to-white/20 opacity-0 group-hover:opacity-100 transition duration-300" />
                   
                   {/* Button content */}
                   <span className="relative z-10 flex items-center justify-center gap-2">

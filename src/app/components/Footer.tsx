@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { FiPhone, FiMail, FiMapPin, FiLinkedin, FiGithub, FiTwitter, FiInstagram } from "react-icons/fi";
 
-
 // Floating particles component for footer
 const FooterParticles = () => {
   return (
@@ -9,7 +8,7 @@ const FooterParticles = () => {
       {[...Array(15)].map((_, i) => (
         <motion.div
           key={`footer-particle-${i}`}
-          className="absolute w-1 h-1 bg-cyan-400 rounded-full opacity-20"
+          className="absolute w-1 h-1 bg-teal-300 rounded-full opacity-20"
           initial={{
             x: Math.random() * 100 + "%",
             y: Math.random() * 100 + "%",
@@ -106,7 +105,7 @@ export default function Footer() {
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
               >
-                <h3 className="text-3xl sm:text-4xl font-black text-transparent bg-gradient-to-r from-cyan-400 via-pink-400 to-purple-400 bg-clip-text mb-2">
+                <h3 className="text-3xl sm:text-4xl font-black text-transparent bg-gradient-to-r from-cyan-400 via-teal-300 to-teal-400 bg-clip-text mb-2">
                   ORAC Dental
                 </h3>
                 <p className="text-gray-400 text-sm">
@@ -117,7 +116,7 @@ export default function Footer() {
               {/* Mission Statement */}
               <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-6">
                 Revolutionizing dental care with{" "}
-                <span className="text-transparent bg-gradient-to-r from-cyan-400 to-pink-400 bg-clip-text font-semibold">
+                <span className="text-transparent bg-gradient-to-r from-cyan-400 to-teal-300 bg-clip-text font-semibold">
                   AI-powered technology
                 </span>{" "}
                 and personalized treatment plans for optimal oral health.
@@ -126,9 +125,9 @@ export default function Footer() {
               {/* Social Links */}
               <div className="flex justify-center lg:justify-start gap-4">
                 {[
-                  { icon: FiInstagram, href: "#", color: "from-pink-500 to-purple-500" },
+                  { icon: FiInstagram, href: "#", color: "from-teal-500 to-teal-400" },
                   { icon: FiTwitter, href: "#", color: "from-cyan-400 to-blue-500" },
-                  { icon: FiLinkedin, href: "#", color: "from-blue-500 to-purple-500" },
+                  { icon: FiLinkedin, href: "#", color: "from-blue-500 to-teal-500" },
                   { icon: FiGithub, href: "#", color: "from-gray-400 to-gray-600" }
                 ].map((social, idx) => (
                   <motion.a
@@ -143,7 +142,7 @@ export default function Footer() {
                     transition={{ delay: 0.4 + idx * 0.1 }}
                   >
                     <div className={`absolute inset-0 bg-gradient-to-r ${social.color} rounded-lg opacity-0 group-hover:opacity-100 transition duration-300 blur-sm`} />
-                    <div className="relative w-10 h-10 bg-slate-800/50 rounded-lg border border-cyan-500/30 flex items-center justify-center text-gray-400 group-hover:text-white group-hover:border-pink-400/50 transition-all duration-300">
+                    <div className="relative w-10 h-10 bg-slate-800/50 rounded-lg border border-cyan-500/30 flex items-center justify-center text-gray-400 group-hover:text-white group-hover:border-teal-300/50 transition-all duration-300">
                       <social.icon className="text-lg" />
                     </div>
                   </motion.a>
@@ -159,15 +158,15 @@ export default function Footer() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="text-center lg:text-left"
             >
-              <h4 className="text-xl font-bold text-transparent bg-gradient-to-r from-cyan-400 to-pink-400 bg-clip-text mb-6">
+              <h4 className="text-xl font-bold text-transparent bg-gradient-to-r from-cyan-400 to-teal-300 bg-clip-text mb-6">
                 Contact Information
               </h4>
               
               <div className="space-y-4">
                 {[
                   { icon: FiMapPin, text: "123 Future Ave, Tech City, India", gradient: "from-green-400 to-cyan-400" },
-                  { icon: FiPhone, text: "+91 12345 67890", gradient: "from-blue-400 to-purple-400" },
-                  { icon: FiMail, text: "info@oracdental.com", gradient: "from-pink-400 to-red-400" }
+                  { icon: FiPhone, text: "+91 12345 67890", gradient: "from-blue-400 to-teal-400" },
+                  { icon: FiMail, text: "info@oracdental.com", gradient: "from-teal-400 to-red-400" }
                 ].map((contact, idx) => (
                   <motion.div
                     key={contact.text}
@@ -197,7 +196,7 @@ export default function Footer() {
                 <div className="text-xs text-gray-400 space-y-1">
                   <div>Mon - Fri: 9:00 AM - 8:00 PM</div>
                   <div>Sat - Sun: 10:00 AM - 6:00 PM</div>
-                  <div className="text-pink-400 font-medium">🚨 24/7 Emergency Care</div>
+                  <div className="text-teal-300 font-medium">🚨 24/7 Emergency Care</div>
                 </div>
               </motion.div>
             </motion.div>
@@ -210,7 +209,7 @@ export default function Footer() {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="text-center lg:text-left"
             >
-              <h4 className="text-xl font-bold text-transparent bg-gradient-to-r from-cyan-400 to-pink-400 bg-clip-text mb-6">
+              <h4 className="text-xl font-bold text-transparent bg-gradient-to-r from-cyan-400 to-teal-300 bg-clip-text mb-6">
                 Quick Links
               </h4>
 
@@ -220,8 +219,6 @@ export default function Footer() {
                   { name: "Our Team", href: "#team" },
                   { name: "About Us", href: "#about" },
                   { name: "Contact", href: "#contact" },
-                  // { name: "Testimonials", href: "#testimonials" },
-                  // { name: "Book Appointment", href: "#appointment" }
                 ].map((link, idx) => (
                   <motion.a
                     key={link.name}
@@ -230,7 +227,7 @@ export default function Footer() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.8 + idx * 0.05 }}
-                    className="group relative flex items-center gap-2 text-gray-300 hover:text-transparent hover:bg-gradient-to-r hover:from-cyan-400 hover:to-pink-400 hover:bg-clip-text transition-all duration-300 text-sm py-2"
+                    className="group relative flex items-center gap-2 text-gray-300 hover:text-transparent hover:bg-gradient-to-r hover:from-cyan-400 hover:to-teal-300 hover:bg-clip-text transition-all duration-300 text-sm py-2"
                     whileHover={{ x: 5 }}
                   >
                     <motion.div
@@ -251,16 +248,16 @@ export default function Footer() {
                 className="mt-8 p-4 rounded-xl bg-gradient-to-r from-slate-800/30 to-purple-900/30 border border-cyan-500/20"
               >
                 <h5 className="text-cyan-400 font-semibold mb-3 text-sm">Stay Updated</h5>
-                <div className="flex gap-2" id='subscribebyemail'>
+                <div className="flex justify-center sm:gap-2 gap-1" id='subscribebyemail'>
                   <input
                     id='subscribebyuseremail'
                     type="email"
                     placeholder="Your email"
-                    className="flex-1 px-3 py-2 bg-slate-800/50 border border-cyan-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-pink-400 text-xs"
+                    className="flex-1 px-1 py-2 bg-slate-800/50 border border-cyan-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-teal-300 text-xs"
                   />
                  <a href="mailto:theoractdental@gmail.com?subject=New%20email%20subscriber">
                     <motion.button
-                      className="px-4 py-2 bg-gradient-to-r from-pink-500 to-cyan-400 rounded-lg text-white text-xs font-semibold"
+                      className="px-4 py-2 bg-gradient-to-r from-teal-500 to-cyan-400 rounded-lg text-white text-xs font-semibold"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
@@ -325,7 +322,7 @@ export default function Footer() {
                 href="https://www.linkedin.com/in/yadav-majersingh-ramsingh-0858aa211/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-transparent bg-gradient-to-r from-cyan-400 to-pink-400 bg-clip-text font-semibold hover:from-pink-400 hover:to-cyan-400 transition-all duration-300"
+                className="text-transparent bg-gradient-to-r from-cyan-400 to-teal-300 bg-clip-text font-semibold hover:from-teal-300 hover:to-cyan-400 transition-all duration-300"
                 whileHover={{ scale: 1.1 }}
               >
                 Majersingh
