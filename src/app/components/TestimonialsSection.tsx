@@ -19,14 +19,14 @@ const testimonials = [
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80"
   },
   {
-    name: "Nitin",
+    name: "Kajal Patel",
     text: "The virtual consultation and advanced sterilization protocols made me feel completely safe. Outstanding service and cutting-edge technology!",
     rating: 5,
     treatment: "Orthodontics",
     image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=150&q=80"
   },
   {
-    name: "Kajal Patel",
+    name: "Nitin",
     text: "ORAC Dental's holographic treatment planning showed me exactly what to expect. The results speak for themselves - world-class care!",
     rating: 5,
     treatment: "Root Canal",

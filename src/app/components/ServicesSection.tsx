@@ -7,49 +7,49 @@ interface ServicesSection  {
 const services = [
   {
     name: "Regular Check-up",
-    image: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80",
+    image: "/regularcheckup.jpeg",
     icon: "🦷",
     description: "Comprehensive oral health examination"
   },
   {
     name: "Tooth Replacement",
-    image: "https://images.unsplash.com/photo-1506459225024-1428097a7e18?auto=format&fit=crop&w=400&q=80",
+    image: "/implanting2.jpg",
     icon: "🦾",
     description: "Permanent tooth replacement solutions"
   },
   {
     name: "Kids Dentistry",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
+    image: "/checkup.jpg",
     icon: "👶",
     description: "Gentle care for little smiles"
   },
   {
     name: "Braces & Aligners",
-    image: "https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?auto=format&fit=crop&w=400&q=80",
+    image: "/bracing.jpg",
     icon: "🦷",
     description: "Straighten teeth with modern technology"
   },
   {
     name: "Follow Appointment",
-    image: "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80",
+    image: "/appointment.jpeg",
     icon: "📅",
     description: "Scheduled follow-up care"
   },
   {
     name: "Tooth Pain",
-    image: "https://images.unsplash.com/photo-1511407397940-d57f68e81203?auto=format&fit=crop&w=400&q=80",
+    image: "/implanting.jpg",
     icon: "⚡",
     description: "Emergency pain relief treatment"
   },
   {
     name: "Tooth Cleaning",
-    image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80",
+    image: "/smile.jpg",
     icon: "✨",
     description: "Professional deep cleaning service"
   },
   {
     name: "Emergency Care",
-    image: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80",
+    image: "/emer.jpeg",
     icon: "🚨",
     description: "24/7 urgent dental care"
   },

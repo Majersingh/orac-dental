@@ -164,9 +164,9 @@ export default function Footer() {
               
               <div className="space-y-4">
                 {[
-                  { icon: FiMapPin, text: "123 Future Ave, Tech City, India", gradient: "from-green-400 to-cyan-400" },
-                  { icon: FiPhone, text: "+91 12345 67890", gradient: "from-blue-400 to-teal-400" },
-                  { icon: FiMail, text: "info@oracdental.com", gradient: "from-teal-400 to-red-400" }
+                  { icon: FiMapPin, text: "F-123, Platinum Plaza, Surat Navsari Main Road, Unn, Surat -394210", gradient: "from-green-400 to-cyan-400" },
+                  { icon: FiPhone, text: "+91 8171910245", gradient: "from-blue-400 to-teal-400" },
+                  { icon: FiMail, text: "theoracdental@gmail.com", gradient: "from-teal-400 to-red-400" }
                 ].map((contact, idx) => (
                   <motion.div
                     key={contact.text}
