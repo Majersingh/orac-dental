@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FiPhone, FiMail, FiMapPin, FiLinkedin, FiGithub, FiTwitter, FiInstagram } from "react-icons/fi";
+import { FiPhone, FiMail, FiMapPin, FiLinkedin, FiTwitter, FiInstagram, FiFacebook } from "react-icons/fi";
 
 // Floating particles component for footer
 const FooterParticles = () => {
@@ -125,10 +125,10 @@ export default function Footer() {
               {/* Social Links */}
               <div className="flex justify-center lg:justify-start gap-4">
                 {[
-                  { icon: FiInstagram, href: "#", color: "from-teal-500 to-teal-400" },
-                  { icon: FiTwitter, href: "#", color: "from-cyan-400 to-blue-500" },
-                  { icon: FiLinkedin, href: "#", color: "from-blue-500 to-teal-500" },
-                  { icon: FiGithub, href: "#", color: "from-gray-400 to-gray-600" }
+                  { icon: FiInstagram, href: "https://www.instagram.com/theoracdental/", color: "from-teal-500 to-teal-400" },
+                  { icon: FiTwitter, href: "https://x.com/theoracdental", color: "from-cyan-400 to-blue-500" },
+                  // { icon: FiLinkedin, href: "#", color: "from-blue-500 to-teal-500" },
+                  { icon: FiFacebook, href: "https://www.facebook.com/profile.php?id=61573742514663", color: "from-gray-400 to-gray-600" }
                 ].map((social, idx) => (
                   <motion.a
                     key={idx}
@@ -194,8 +194,8 @@ export default function Footer() {
               >
                 <h5 className="text-cyan-400 font-semibold mb-2 text-sm">Operating Hours</h5>
                 <div className="text-xs text-gray-400 space-y-1">
-                  <div>Mon - Fri: 9:00 AM - 8:00 PM</div>
-                  <div>Sat - Sun: 10:00 AM - 6:00 PM</div>
+                  <div>Mon - Sat: 3:30 PM - 8:30 PM</div>
+                  <div>Sun: 11:00 AM - 2:00 PM</div>
                   <div className="text-teal-300 font-medium">🚨 24/7 Emergency Care</div>
                 </div>
               </motion.div>

@@ -3,51 +3,29 @@ import { motion } from "framer-motion";
 const teamMembers = [
   {
     id: 1,
-    name: "Dr. Sarah Johnson",
-    specialty: "Chief Dental Officer",
-    image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=400&q=80",
-    experience: "15+ Years",
-    expertise: ["Oral Surgery", "Implants", "Cosmetic Dentistry"]
+    name: "Dr. Manan Badala",
+    specialty: "Founder & Owner",
+    image: "https://via.placeholder.com/400x400?text=Dr+Manan+Badala", // replace with actual photo
+    experience: "Founder, B.D.S. (Microendodontist & Implantologist)",
+    expertise: [
+      "Visionary behind Orac Dental",
+      "Patient-centered, compassionate care",
+      "Affordable & accountable dentistry"
+    ],
+    bio: "Dr. Manan is the founder and owner of Orac Dental. With a vision to deliver exceptional oral healthcare, he has built a practice that prioritizes quality, compassion, and patient-centered values. As a leader in the field, Dr. Manan ensures dental care remains affordable, accessible, and accountable. He leads a team dedicated to comfort, trust, and satisfaction."
   },
   {
     id: 2,
-    name: "Dr. Michael Chen",
-    specialty: "Orthodontist",
-    image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=400&q=80",
-    experience: "12+ Years",
-    expertise: ["Braces", "Aligners", "Jaw Correction"]
-  },
-  {
-    id: 3,
-    name: "Dr. Emily Rodriguez",
-    specialty: "Pediatric Dentist",
-    image: "https://images.unsplash.com/photo-1594824388197-82c0d6dbcdc9?auto=format&fit=crop&w=400&q=80",
-    experience: "10+ Years",
-    expertise: ["Kids Care", "Preventive Care", "Sedation"]
-  },
-  {
-    id: 4,
-    name: "Dr. James Wilson",
+    name: "Dr. Shrishi Jain",
     specialty: "Oral Surgeon",
-    image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=400&q=80",
-    experience: "18+ Years",
-    expertise: ["Extractions", "Implants", "Bone Grafting"]
-  },
-  {
-    id: 5,
-    name: "Dr. Lisa Park",
-    specialty: "Cosmetic Dentist",
-    image: "https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?auto=format&fit=crop&w=400&q=80",
-    experience: "14+ Years",
-    expertise: ["Veneers", "Whitening", "Smile Design"]
-  },
-  {
-    id: 6,
-    name: "Dr. David Kumar",
-    specialty: "Endodontist",
-    image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=400&q=80",
-    experience: "16+ Years",
-    expertise: ["Root Canal", "Pain Management", "Retreatment"]
+    image: "https://via.placeholder.com/400x400?text=Dr+Shrishi+Jain", // replace with actual photo
+    experience: "B.D.S., M.D.S. (Oral & Maxillofacial Surgery)",
+    expertise: [
+      "Oral & maxillofacial surgery",
+      "Hospital affiliations across Surat",
+      "Skilled in complex extractions & treatments"
+    ],
+    bio: "Dr. Shrishi is a committed Oral and Maxillofacial Surgeon based in Surat. Actively practicing and affiliated with several hospitals in the city, she brings expertise and a dedication to accessible oral healthcare. Her presence enhances the surgical capabilities of our dental practice."
   }
 ];
 

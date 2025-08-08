@@ -5,40 +5,33 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 const testimonials = [
   {
-    name: "Sarah Mitchell",
+    name: "Saran Patel",
     text: "The future of dental care is here! The AI-powered diagnostics and laser treatments were incredible. My implant procedure was completely painless.",
     rating: 5,
     treatment: "Dental Implants",
     image: "https://images.unsplash.com/photo-1494790108755-2616c96541e2?auto=format&fit=crop&w=150&q=80"
   },
   {
-    name: "James Chen",
+    name: "Rahul Jnin",
     text: "I was amazed by their 3D scanning technology. The precision and care exceeded all my expectations. My smile transformation is beyond what I imagined!",
     rating: 5,
     treatment: "Smile Makeover",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80"
   },
   {
-    name: "Emily Rodriguez",
+    name: "Nitin",
     text: "The virtual consultation and advanced sterilization protocols made me feel completely safe. Outstanding service and cutting-edge technology!",
     rating: 5,
     treatment: "Orthodontics",
     image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=150&q=80"
   },
   {
-    name: "Michael Thompson",
+    name: "Kajal Patel",
     text: "ORAC Dental's holographic treatment planning showed me exactly what to expect. The results speak for themselves - world-class care!",
     rating: 5,
     treatment: "Root Canal",
     image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&q=80"
   },
-  {
-    name: "Lisa Park",
-    text: "The AI-assisted surgery and robotic precision made my complex procedure seamless. This is truly the future of dentistry!",
-    rating: 5,
-    treatment: "Oral Surgery",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&q=80"
-  }
 ];
 
 // Floating particles component
@@ -365,7 +358,7 @@ export default function TestimonialsSection() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-3xl mx-auto">
             {[
               { number: "98%", label: "Patient Satisfaction" },
-              { number: "5000+", label: "Happy Patients" },
+              { number: "1000+", label: "Happy Patients" },
               { number: "4.9★", label: "Average Rating" }
             ].map((stat, idx) => (
               <motion.div

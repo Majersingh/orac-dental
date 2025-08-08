@@ -2,43 +2,39 @@ import { motion } from "framer-motion";
 
 const highlights = [
   {
-    title: "World Class Treatment",
-    icon: "🌟",
+    title: "Cutting-Edge Dental Treatments",
+    icon: "🦷",
     items: [
-      "Only Asian member of the Royal Society of Medicine, UK",
-      "Globally certified partners",
-      "Premium materials & cutting-edge tools",
-      "Advanced tech: Laser dentistry & 3D intraoral scanning",
+      "Treatments with cutting-edge technology",
+      "Use of premium & advanced materials",
+      "Expert professionals for precision results",
+      "Unparalleled expertise with patient satisfaction",
     ],
   },
   {
-    title: "Doctor-Led Patient Care",
-    icon: "👨‍⚕️",
-    items: [
-      "Helpline managed by 50+ dentists",
-      "1300+ doctors delivering consistent care",
-      "Treatments reviewed for quality assurance",
-      "Structured post-treatment follow-up plans",
-    ],
-  },
-  {
-    title: "14 Years Of Experience",
-    icon: "⏳",
-    items: [
-      "1300+ experienced dental specialists",
-      "3 Lakh+ successful root canal treatments",
-      "50,000+ implants placed with precision",
-      "20,000+ completed orthodontic treatment",
-    ],
-  },
-  {
-    title: "Unmatched Safety Standards",
+    title: "World-Class Safety & Hygiene",
     icon: "🛡️",
     items: [
-      "10X safety protocols across all clinics",
-      "AI-powered sterilization (AIPS from USA)",
       "4-step process ensuring deep sterilization",
-      "Spotless, safe, and hygienic environment",
+      "Hygienic and safe environment",
+      "Completely sterile working area",
+    ],
+  },
+  {
+    title: "Doctor-Led Patient Experience",
+    icon: "👨‍⚕️",
+    items: [
+      "Structured post-treatment follow-up by doctors",
+      "Educating and informing patient before every treatment",
+    ],
+  },
+  {
+    title: "Experienced & Trusted Team",
+    icon: "🏆",
+    items: [
+      "Decades of clinical experience across specializations",
+      "Focus on patient comfort and long-term oral health",
+      "Proven success across a wide range of dental procedures",
     ],
   },
 ];
@@ -308,10 +304,10 @@ export default function WhyUsSection() {
         >
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { number: "1300+", label: "Expert Doctors" },
-              { number: "3L+", label: "Treatments Done" },
-              { number: "50K+", label: "Implants Placed" },
-              { number: "14", label: "Years Experience" }
+              { number: "10+", label: "Expert Doctors" },
+              { number: "1k+", label: "Treatments Done" },
+              { number: "100", label: "Implants Placed" },
+              { number: "5", label: "Years Experience" }
             ].map((stat, idx) => (
               <motion.div
                 key={stat.label}

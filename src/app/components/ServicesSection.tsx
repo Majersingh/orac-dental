@@ -12,7 +12,7 @@ const services = [
     description: "Comprehensive oral health examination"
   },
   {
-    name: "Dental Implants",
+    name: "Tooth Replacement",
     image: "https://images.unsplash.com/photo-1506459225024-1428097a7e18?auto=format&fit=crop&w=400&q=80",
     icon: "🦾",
     description: "Permanent tooth replacement solutions"
