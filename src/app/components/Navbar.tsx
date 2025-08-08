@@ -4,10 +4,10 @@ import { FiMenu, FiX } from "react-icons/fi";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navItems = [
-  { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Contact", href: "#contact" },
-  { label: "Blogs", href: "#blogs" },
+  { label: "About", href: "/#about" },
+  { label: "Services", href: "/#services" },
+  { label: "Contact", href: "/#contact" },
+  { label: "Blogs", href: "/#blogs" },
 ];
 
 const FloatingNavParticles = () => {
@@ -137,7 +137,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 py-3 sm:py-4 relative z-10">
         {/* Logo */}
         <motion.a 
-          href="#" 
+          href="/#" 
           className="relative group"
           whileHover={{ scale: 1.05 }}
           transition={{ type: "spring", stiffness: 400, damping: 15 }}
