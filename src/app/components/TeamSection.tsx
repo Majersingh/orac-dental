@@ -5,7 +5,7 @@ const teamMembers = [
     id: 1,
     name: "Dr. Manan Badala",
     specialty: "Founder & Owner",
-    image: "https://via.placeholder.com/400x400?text=Dr+Manan+Badala", // replace with actual photo
+    image: "/manadp.jpeg", // replace with actual photo
     experience: "Founder, B.D.S. (Microendodontist & Implantologist)",
     expertise: [
       "Visionary behind Orac Dental",
@@ -148,7 +148,7 @@ export default function TeamSection() {
         </div>
 
         {/* Team Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
           {teamMembers.map((member, i) => (
             <motion.div
               key={member.id}
@@ -199,7 +199,7 @@ export default function TeamSection() {
                         <img
                           src={member.image}
                           alt={member.name}
-                          className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                          className="w-full h-full object-cover transition-all duration-500"
                         />
                       </div>
                     </div>

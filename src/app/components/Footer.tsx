@@ -292,7 +292,7 @@ export default function Footer() {
               <p className="text-xs mt-1">Powered by Advanced AI Technology</p>
             </div>
 
-            {/* Legal Links */}
+            {/* Legal Links
             <div className="flex gap-6 text-xs">
               {["Privacy Policy", "Terms of Service", "Cookie Policy"].map((link, idx) => (
                 <motion.a
@@ -307,7 +307,7 @@ export default function Footer() {
                   {link}
                 </motion.a>
               ))}
-            </div>
+            </div> */}
 
             {/* Developer Credit */}
             <motion.div

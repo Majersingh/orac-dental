@@ -8,7 +8,7 @@ export default () => {
   const y = useTransform(scrollYProgress, [0.2, 0.4], [50, 0])
 
   const handleWhatsApp = () => {
-    const whatsappLink = `https://wa.me/918511926953?text=Hello, I'm interested in your services`;
+    const whatsappLink = `https://wa.me/918171910245?text=Hello, I'm interested in your services`;
     window.open(whatsappLink, '_blank');
   };
 
