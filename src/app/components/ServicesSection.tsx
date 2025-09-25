@@ -219,13 +219,13 @@ export default function ServicesSection({ onBook }:ServicesSection) {
                       {service.name}
                     </h3>
                     
-                    <p className="text-gray-300 text-sm sm:text-base opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                    <p className="text-gray-300 text-sm sm:text-base opacity-80 group-hover:opacity-100 transform translate-y-0 group-hover:-translate-y-2 transition-all duration-300">
                       {service.description}
                     </p>
                     
                     {/* CTA Arrow */}
                     <motion.div
-                      className="flex items-center gap-2 text-teal-300 opacity-0 group-hover:opacity-100 transition-all duration-300"
+                      className="flex items-center gap-2 text-teal-300 opacity-80 group-hover:opacity-100 transition-all duration-300"
                       initial={{ x: -10 }}
                       whileHover={{ x: 0 }}
                     >
