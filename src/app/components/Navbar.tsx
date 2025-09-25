@@ -95,15 +95,6 @@ export default function Navbar() {
     }
   }, [isAnimating]);
 
-  // Handle navigation click
-  const handleNavClick = useCallback((href: string) => {
-    setOpen(false);
-    // Optional: smooth scroll to section
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  }, []);
 
   return (
     <motion.nav 
@@ -271,12 +262,11 @@ export default function Navbar() {
                 <nav className="p-6 bg-gradient-to-br from-teal-900  to-teal-700 " role="navigation">
                   {navItems.map((item, index) => (
                     <motion.a
-                      key={item.label}
+                      key={item.label+'refg'}
                       href={item.href}
                       className="block relative group py-3"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        handleNavClick(item.href);
+                      onClick={() => {
+                       setOpen(false);
                       }}
                       initial={{ opacity: 0, x: 50 }}
                       animate={{ opacity: 1, x: 0 }}
